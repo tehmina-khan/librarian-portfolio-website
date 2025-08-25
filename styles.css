@@ -858,9 +858,10 @@
 }
 
 .footer-books img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  max-width: 100%;   /* Normal size on big screens */
+  width: 100%;        /* Shrinks proportionally */
+  height: auto;       /* Keep aspect ratio */
+  object-fit: contain;
 }
 
 .footer-bottom {
@@ -932,13 +933,26 @@
   .quote-btn {
     margin-left: 0;
   }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
+}
+/* Medium screens (tablets, < 900px) */
+@media (max-width: 900px) {
+  .footer-books img  {
+    max-width: 900px;  /* shrink */
   }
 }
 
+/* Small screens (mobiles, < 500px) */
+@media (max-width: 500px) {
+  .footer-books img {
+    max-width: 500px;   /* shrink more */
+  }
+  .footer-left h2{}
+  .footer-center a[href="index.html#services"],
+  .footer-center a[href="about.html"] {
+    display: none;
+  }
+}
+/* Footer Ends Here */
 
 /* SERVICES PAGE CSS STARTS HERE */
 .services-section {
@@ -1008,3 +1022,48 @@
   }
 }
 
+.customers-section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .customers-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .customers-section p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .customers-logos {
+      margin-top: 2%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 80px;
+      
+    }
+
+     .customers-logos img {
+      height: 120px;          /* Fixed height */
+      width: auto;           /* Keep aspect ratio */
+      object-fit: contain;   /* Prevent distortion */
+      transition: transform 0.3s ease;
+    }
+@media (max-width: 700px){
+  .customers-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+}
+@media (max-width: 485px) {
+  .customers-logos {
+    margin-top: 6%;
+    flex-direction: column;   /* Stack logos vertically */
+    align-items: center;      /* Center them */
+    gap: 30px;                /* Reduce space between */
+  }  
+}
