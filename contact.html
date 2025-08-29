@@ -39,7 +39,6 @@
     <div class="nav-links">
       <a href="about.html">About</a>
       <a href="index.html#services">Services</a>
-      
       <a href="contact.html">Contact</a>
     </div>
     <div class="hamburger" id="hamburger">
@@ -59,48 +58,51 @@
 
   
 
-  <!-- SERVICES KA CHAKKAR STARTS HERE -->
-<section class="services-section">
-  <div class="services-image">
-    <img src="images/main_services_page.jpg" alt="Scepter College Library">
-  </div>
-  <div class="services-content">
-    <span class="section-label">About me?</span>
-    <h2 class="section-title">I Help Create Inspiring Libraries</h2>
-    <p>
-      With over 28 years of experience building and managing libraries from the ground up, 
-      I bring a passion for creating spaces where knowledge is easy to find and a joy to explore. 
-      From The Royal Colosseum University to Sceptre College, Beaconhouse School, British Overseas School, 
-      and Aisha Bawany Girls’ Secondary School, I have transformed empty rooms into vibrant, well-organized 
-      libraries aligned with HEC standards.
-    </p>
-    <p>
-      Being skilled in library management systems including <b>LIMS, PRIMASOFT, BEAMS, KOHA, and Web Dewey,</b>  
-      I combine technical expertise with a personal touch—whether guiding a student to the perfect 
-      resource or curating collections that inspire. I believe a library should feel welcoming, 
-      organized, and alive, and I take pride in making that happen every day.
-    </p>
-    <a href="contact.html">
-      <button id="contact-button-quote" style="background-color: #4b2b14; font-weight: 500; padding: 12px 20px;"> Get in touch</button>
-    </a>
-  </div>
-</section>
-  <!-- SERVICES KA CHAKKAR ENDS HERE -->
-   <br><br>
-     <section class="customers-section">
-      <span class="section-label">WORK IN PRACTICE?</span>
-    <h2>Places I Have Helped Transform</h2> 
+  <!-- EMAIL KA CHAKKAR STARTS HERE -->
+   <div class="quote-top-down">
+<div class="contact-form-wrapper" style="margin-top: 5%;">
+  <h1 class="quote-heading">LET'S START YOUR PROJECT WITH AN INSTANT QUOTE</h1>
+  <hr class="quote-hr">
 
-    <div class="customers-logos">
-      <img src="images/Beaconhouse-logo.png" alt="Beaconhouse-ogo 1">
-      <img src="images/AyeshaBawani-logo.png" alt="AyeshaBawani-logo">
-      <img src="images/SceptreCollege-logo-black.png" alt="SceptreCollege-logo-black">
-      <img src="images/BritishOverseasSchool-logo.jpg" alt="BritishOverseasSchool-logo" >
-      <img src="images/TRC logo.png" alt="TRC-logo" >
+  <form id="contactForm">
+    <input type="text" name="user_name" placeholder="*Full Name" required>
 
-    </div>
-  </section>
-<br><br><br><br>
+    <input type="tel" name="user_phone" placeholder="Phone Number">
+    <input type="email" name="user_email" placeholder="Email Address">
+
+    <input type="text" name="user_organization" placeholder="Organisation (e.g. home, your office name)">
+    <input type="text" name="space_type" placeholder="*Type of Space (e.g., Home, Public, Academy)" required>
+
+    <input type="number" name="physical_count" placeholder="Number of physical books">
+    <input type="number" name="ebook_count" placeholder="Number of E-books">
+    <input type="number" name="audio_count" placeholder="Number of Audio books">
+
+
+    <input type="text" name="subject" placeholder="Subject">
+    <textarea name="message" rows="5" placeholder="Your Message..."></textarea>
+
+    <button type="submit" class="wavy-button"><span>Get the quote</span></button>
+  </form>
+</div>
+</div>
+
+<!-- MODAL: ERROR -->
+<div class="popup-overlay" id="errorPopup">
+  <div class="popup-content">
+    <p>Please provide at least a Phone Number or an Email Address.</p>
+    <button class="close-popup">OK</button>
+  </div>
+</div>
+
+<!-- MODAL: SUCCESS -->
+<div class="popup-overlay" id="successPopup">
+  <div class="popup-content">
+    <p>Thanks for the information, I will get back to you in 2 business days.</p>
+    <button class="close-popup">Close</button>
+  </div>
+</div>
+   <!-- EMAIL KA CHAKKAR ENDS HERE -->
+<br><br><br><br><br>
 <!-- CONTACT PAGE STARTS HERE  -->
 <footer class="custom-footer">
   <div class="footer-books">
@@ -133,7 +135,7 @@
 
   <p class="footer-dev-info">Developed by: <a href="https://www.linkedin.com/in/tehmina-ilyas-khan/">Tehmina Khan</a></p>
 </footer>
-  <!-- CONTACT PAGE ENDS HERE AT THIS POINT -->
+  <!-- CONTACT PAGE ENDS HERE  -->
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
