@@ -29,27 +29,19 @@ console.log("JS file is connected!");
 
   // IMAGE SLIDER STARTS HERE
 document.addEventListener("DOMContentLoaded", function () {
-
-
   const ring = document.querySelector('.rotating-slider-ring');
   const zoomOverlay = document.getElementById('zoomPreview');
   const zoomImage = document.getElementById('zoomImage');
   const closeZoom = document.getElementById('closeZoom');
-
-  if (!ring) {
-    console.error("'.rotating-slider-ring' not found in DOM.");
-    return;
-  }
+  const prevZoom = document.getElementById('prevZoom');
+  const nextZoom = document.getElementById('nextZoom');
 
   const imagePaths = [
     "images/image1.jpg",
     "images/image2.jpg",
-    // "images/image3.jpg",
     "images/image4.jpg",
     "images/image5.jpg",
-    // "images/image6.jpg",
     "images/image7.jpg",
-    // "images/image8.jpg",
     "images/image9.jpg",
     "images/image10.jpg",
     "images/image11.jpg",
@@ -62,25 +54,24 @@ document.addEventListener("DOMContentLoaded", function () {
     "images/image18.jpg"
   ];
 
-  ring.innerHTML = "";
+  let currentIndex = 0;
 
-  // Populate images
+  ring.innerHTML = "";
   imagePaths.forEach((src, i) => {
     const imgDiv = document.createElement('div');
     imgDiv.classList.add('rotating-slider-img');
     imgDiv.style.backgroundImage = `url(${src})`;
+    imgDiv.dataset.index = i; // store index
     ring.appendChild(imgDiv);
   });
 
-  // GSAP animation setup
   const autoRotate = gsap.to('.rotating-slider-ring', {
     rotationY: '+=360',
-    duration: 50, // Controls the speed of the slider
+    duration: 50,
     ease: 'none',
     repeat: -1,
   });
 
-  // Initial transforms
   gsap.set('.rotating-slider-ring', { rotationY: 365 });
   gsap.set('.rotating-slider-img', {
     rotateY: (i) => i * -36,
@@ -89,44 +80,39 @@ document.addEventListener("DOMContentLoaded", function () {
     backfaceVisibility: 'hidden'
   });
 
-  // 👇 This flag tracks if user manually paused
-  let manuallyPaused = false;
+  function openZoom(index) {
+    currentIndex = index;
+    zoomImage.style.backgroundImage = `url(${imagePaths[currentIndex]})`;
+    zoomOverlay.style.display = 'flex';
+    autoRotate.pause();
+  }
 
-  // Updated click event for each image
   document.querySelectorAll('.rotating-slider-img').forEach(img => {
     img.addEventListener('click', (e) => {
-      const bgImage = img.style.backgroundImage;
-      if (zoomImage && zoomOverlay) {
-        zoomImage.style.backgroundImage = bgImage;
-        zoomOverlay.style.display = 'flex';
-        manuallyPaused = true;
-        autoRotate.pause();
-        e.stopPropagation();
-      }
+      openZoom(parseInt(img.dataset.index));
+      e.stopPropagation();
     });
   });
 
-  // Close preview when 'X' is clicked
   if (closeZoom) {
     closeZoom.addEventListener('click', () => {
-      if (zoomOverlay) {
-        zoomOverlay.style.display = 'none';
-        manuallyPaused = false;
-        autoRotate.resume();
-      }
+      zoomOverlay.style.display = 'none';
+      autoRotate.resume();
     });
   }
 
-  // ✅ Clicking on an image stops the slider
-  document.querySelectorAll('.rotating-slider-img').forEach(img => {
-    img.addEventListener('click', (e) => {
-      manuallyPaused = true;
-      autoRotate.pause();
-      e.stopPropagation(); // prevent body click triggering resume
-    });
+  // Navigate next/prev
+  nextZoom.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % imagePaths.length;
+    zoomImage.style.backgroundImage = `url(${imagePaths[currentIndex]})`;
   });
 
+  prevZoom.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
+    zoomImage.style.backgroundImage = `url(${imagePaths[currentIndex]})`;
+  });
 });
+
 
   // IMAGE SLIDER ENDS HERE
 

@@ -86,12 +86,12 @@
       right: -250px;
       width: 250px;
       height: 100%;
-      background-color: #ffedad;
+      background-color: #fff1bf;
       box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
       padding: 2rem;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 0.8rem;
       transition: right 0.3s ease;
 
       z-index: 1001;
@@ -152,7 +152,7 @@
       text-align: center;
       color: #4d2b0a;
       
-      background-color: #cccac8; /* fallback color */
+      background-color: #fff1bf; /* fallback color */
       background-image: url('images/LibraryWeb Web Design Final for web without main text.jpg');
       background-size: cover;
       background-position: center;
@@ -287,7 +287,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #f0d999;
+  background-color: #fff1be;
   clip-path: polygon(
     30% 0%, 70% 0%, 100% 30%, 100% 70%,
     70% 100%, 30% 100%, 0% 70%, 0% 30%
@@ -522,9 +522,6 @@
 /* SERVICES SECTION ENDS HERE */
 
 /* IMAGE SLIDER CSS STARTS HERE */
-/* IMAGE SLIDER CSS ENDS HERE */
-
-
     @media (max-width: 500px) {
       .logo img {
         height: 40px;
@@ -667,6 +664,28 @@
   border: none;
   cursor: pointer;
   z-index: 10000;
+}
+.prev-zoom-btn,
+.next-zoom-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(1.5rem, 3vw, 2rem);;
+  color: white;
+  background: rgba(0,0,0,0.1);
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.prev-zoom-btn { left: 40px; }
+.next-zoom-btn { right: 40px; }
+
+.prev-zoom-btn:hover,
+.next-zoom-btn:hover {
+  background: rgba(255,255,255,0.2);
 }
 
 
@@ -930,9 +949,6 @@
 
 /* Small screens (mobiles, < 500px) */
 @media (max-width: 500px) {
-  .footer-books img {
-    max-width: 500px;   /* shrink more */
-  }
   .footer-center a[href="index.html#services"],
   .footer-center a[href="about.html"] {
     display: none;
@@ -941,13 +957,13 @@
   padding: 0px 0px;
   }
   .footer-left h2 {
-  font-size: clamp(0.9rem, 5vw, 2.6rem);
+  font-size: clamp(1.1rem, 5vw, 2.6rem);
   font-weight: 600;
   letter-spacing: 0px;
-  line-height: 1.2; /* tighter, you can adjust to 1.1 or 1.3 as needed */
+  line-height: 1.4; /* tighter, you can adjust to 1.1 or 1.3 as needed */
   }
   .quote-btn {
-  padding: 0.1vw 3vw;
+  padding: 0.2vw 3vw;
   }
   
 

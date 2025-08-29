@@ -39,6 +39,7 @@
 
   <div class="side-menu" id="sideMenu">
     <div class="close-btn" id="closeBtn">&times;</div>
+    <a href="index.html"><span>Home</span></a>
     <a href="about.html"><span>About</span></a>
     <a href="#services"><span>Services</span></a>
     <a href="quote.html"><span>Contact</span></a>
@@ -136,8 +137,11 @@
       </div>
     </div>
     <!-- Zoom Preview Modal -->
+    <!-- Zoom Preview Modal -->
     <div class="zoom-preview-overlay" id="zoomPreview">
+      <button class="prev-zoom-btn" id="prevZoom">&#10094;</button>
       <div class="zoom-preview-image" id="zoomImage"></div>
+      <button class="next-zoom-btn" id="nextZoom">&#10095;</button>
       <button class="close-zoom-btn" id="closeZoom">×</button>
     </div>
   </section>
@@ -148,7 +152,7 @@
   <div id="contact" class="contact-container-bg">
     <div class="contact-container">
       <h2 class="contact-h2"><i class="ri-book-shelf-line"></i>LET'S START A PROJECT TOGETHER</h2>
-      <!-- <button class="contact-button">muneerahzia@gmail.com</button>
+      <button class="contact-button">muneerahzia@gmail.com</button>
       <button class="contact-button">Whatsapp</button> ->
       <div class="contact-buttons">
         <a href="mailto:muneerahzia77@gmail.com" class="btn gmail-btn">
@@ -174,7 +178,13 @@
   </div>  -->
   <footer class="custom-footer">
   <div class="footer-books">
+    <picture>
+    <!-- This image will show for screens ≤ 500px -->
+    <source srcset="images/experimental-01.png" media="(max-width: 450px)">
+    
+    <!-- Default image (for larger screens) -->
     <img src="images/footer_v11-01.png" alt="Books illustration">
+  </picture>
 
     <div class="footer-left">
       <h2>LET’S BUILD SOMETHING<br>GREAT TOGETHER</h2>
