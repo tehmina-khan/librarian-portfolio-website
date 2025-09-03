@@ -1,0 +1,1094 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      overflow: auto;
+      scrollbar-width: none;         /* Firefox */
+      -ms-overflow-style: none;      /* IE and Edge */
+      scroll-behavior: smooth;
+
+    }
+
+    html::-webkit-scrollbar, 
+    body::-webkit-scrollbar {
+      display: none;                 /* Chrome, Safari, Opera */
+    }
+
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      /* background: linear-gradient(to bottom, #ccc, #eee); */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1rem;
+      z-index: 1000;
+      /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      /* Let it match navbar height */
+    }
+
+    .logo img {
+      height: 50px;
+      /* You can adjust this size */
+      width: auto;
+      object-fit: contain;
+    }
+
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #555;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+      margin-right: 1rem;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      border-radius: 2px;
+    }
+
+    /* Sidebar Menu */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #fff1bf;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      transition: right 0.3s ease;
+
+      z-index: 1001;
+      /* 👈 Add this line to ensure it appears above the navbar */
+    }
+
+    .side-menu a {
+      position: relative;
+      display: inline-block;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #333;
+      margin: 0.5rem 0;
+      transition: color 0.3s ease;
+    }
+
+    .side-menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #555;
+      transition: width 0.3s ease;
+    }
+
+    .side-menu a:hover {
+      color: #666;
+    }
+
+    .side-menu a:hover::after {
+      width: 100%;
+    }
+
+
+    .side-menu.active {
+      right: 0;
+    }
+
+    .close-btn {
+      align-self: flex-end;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      margin-top: 0px;
+      /* Because nav is fixed */
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #4d2b0a;
+      
+      background-color: #fff1bf; /* fallback color */
+      background-image: url('images/LibraryWeb Web Design Final for web without main text.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .Sys{
+      max-width: 60%;
+      margin: 0 auto;
+      padding: 0 20px;
+      font-weight: 500;
+    }
+    
+
+    #contact-button-quote {
+      margin-top: 10px;
+      background-color: #4b2b14f0; /* Green background */
+      color: white; /* Text color */
+      padding: 5px 16px; /* Size */
+      border: none;
+      border-radius: 50px; /* Rounded corners */
+      font-size: 0.8rem;
+      font-weight: 400;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #contact-button-quote:hover {
+      background-color: #3b2107; 
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+    /* HERO SECTION CSS ENDS HERE */
+
+
+ /* COLUMN LAYOUT STARTS HERE */
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      /* height: 100vh;  This sets height 100vH means full screen size height*/
+    }
+
+    /* Each section takes 50% */
+    .box {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .left {
+      /* background-color: #f4a261; */
+      width: 50%;
+      
+      word-wrap: break-word;
+    }
+
+    .right {
+      /* background-color: #2a9d8f;
+      color: white; */
+      width: 50%;
+      
+    }
+/* COLUMN LAYOUT ENDS HERE */
+
+
+/* About me section's CSS starts here */
+.about-me-h2{
+  margin-top: 8%;
+  margin-right: 8vw;
+  margin-left: 8vw;
+  margin-bottom: 3%;
+  font-size: clamp(2rem, 10vw, 3rem);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.about-me-p{
+  padding-left: 55%
+}
+.My-Work{
+  margin-top: 2%;
+  margin-right: 8vw;
+  margin-left: 8vw;
+  font-size: clamp(2rem, 10vw, 3rem);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: left;
+}
+.ri-bard-line{
+  font-size: 60%;
+}
+/* About me section's CSS ends here */
+
+/* Octagonal Button starts Here */
+ /* Centering everything */
+/* Centering container */
+.oc {
+  display: flex;
+  justify-content: flex-end; /* Push to the right */
+  align-items: center;
+  padding: 2rem;
+  margin-right: 1vw;
+}
+.oc{
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  animation: bounce 3s infinite;
+  transition: transform 0.1s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Octagon wrapper */
+.octagon-wrapper {
+  position: relative;
+  width: clamp(125px, 15vw, 150px);
+  height: clamp(125px, 15vw, 150px);
+  background-color: transparent;
+}
+
+/* Rotating octagon shape */
+.octagon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff1be;
+  clip-path: polygon(
+    30% 0%, 70% 0%, 100% 30%, 100% 70%,
+    70% 100%, 30% 100%, 0% 70%, 0% 30%
+  );
+  animation: rotateOctagon 18s linear infinite;
+}
+/* Make the entire octagon clickable */
+.octagon-link {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+/* Centered text */
+.octagon-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(12px, 2vw, 16px);
+  font-weight: 600;
+  color: #000;
+  white-space: nowrap;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Rotation animation */
+@keyframes rotateOctagon {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Octagonal button ends here */
+
+/* CONTACT SECTION CSS STARTS HERE  */
+.contact-container-bg{
+  background-color: #4d2b0a;
+  padding-top: 4%;
+  padding-bottom: 1%;
+}
+.contact-container{
+  margin: 4%;
+}
+.contact-h2{
+  margin-top: 6%;
+  font-size: clamp(2rem, 10vw, 3rem);
+  line-height: 1;
+  letter-spacing: 1px;
+  color: white;
+}
+.ri-book-shelf-line{
+  font-weight: 100;
+}
+/* .contact-button{
+  background-color: transparent;
+  border-style: double;
+  border-radius: 50px;
+
+} */
+
+/* Font + Icons */
+@import url('https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: left;
+  margin-top: 3vw;
+}
+
+.btn {
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  padding: 14px 26px;
+  font-size: 1rem;
+  font-weight: 200;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  border: 2px solid transparent;
+}
+
+.whatsapp-btn {
+  background-color: transparent;
+  border-color: #402408;
+}
+
+.gmail-btn {
+  background-color:transparent;
+  border-color: #402408;
+}
+.contact-hr {
+  width: 80%;               /* Set the length */
+  height: 2px;              /* Set the thickness */
+  background-color: #381f06; /* Your desired color */
+  border: none;             /* Remove default border */
+  margin: 2px auto;        /* Center it and add spacing */
+}
+
+.contact-container-p {
+  padding-top: 1vw;
+  text-align: center;
+  color: white; /* Optional: set a visible text color */
+  font-size: clamp(0.6rem, 3vw, 0.8rem);
+}
+.contact-container-p2 {
+  text-align: center;
+  color: white; /* Optional: set a visible text color */
+  font-size: clamp(0.5rem, 2.5vw, 0.7rem);
+}
+
+.quote-button-wrapper {
+  display: flex;
+  justify-content: flex-end; /* Pushes button to the right */
+  margin-top: 20px; /* optional spacing */
+}
+
+#contact-button-quote-footer {
+  margin: 2vw;
+  background-color: transparent;
+  color: white;
+  padding: 12px 38px;
+  border: 2px solid white;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 500px) {
+  .btn {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+}
+
+/* CONTACT SECTION CSS ENDS HERE  */
+
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      /* Responsive: Stack on small screens */
+      .about-container {
+        flex-direction: column;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+
+      .box {
+        width: 100%;
+        height: auto;
+      } 
+
+    } 
+
+/* SERVICES SECTION STARTS HERE */
+.services{
+  background-color: #fff5d3;
+  padding: 5vw;
+  
+  
+}
+.services h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  
+}
+
+.service-cards {
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card { /*The line in the card and inside*/
+  flex: 1 1 300px;
+  padding: 1.5rem 0rem;
+  border-top: 1px solid #f7d370;
+}
+
+.number {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.star {
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #333;
+  word-spacing: 1px;
+}
+
+
+/* SERVICES SECTION ENDS HERE */
+
+/* IMAGE SLIDER CSS STARTS HERE */
+    @media (max-width: 500px) {
+      .logo img {
+        height: 40px;
+        /* You can adjust this size */
+      }
+
+      .hero {
+        background-image: url('images/Web_Background_upto_500px.png');
+      }
+
+    }
+
+
+    @media (min-width: 501px) {
+      .about-container{
+        width: 80%;
+        margin: 0 auto; /* ✅ This centers the container horizontally */
+        
+      }
+      .octagon-wrapper{
+        margin-right: 4vw;
+      }
+      .about-me-h2{
+        width: 50%;
+      }
+      .about-me-p{
+        padding-left: 35%;
+      }
+
+      .contact-container{
+        width: 80%;
+        margin: 0 auto; /* ✅ This centers the container horizontally */
+        
+      }
+      .octagon-wrapper{
+        margin-right: 4vw;
+      }
+      .contact-h2{
+        width: 50%;
+      }
+      
+    }
+
+
+
+/* ========== 3D Rotating Image Slider ========== */
+
+#slider-h1{
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 5vw;
+  margin-bottom: 0vw;
+  /* border-bottom: 2px solid #000; */
+  display: inline-block;          /* Makes the border only as wide as the text */
+}
+.rotating-slider-stage {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ /* background: rgba(0, 0, 0, 0.1);  optional: you can change or remove */
+  overflow: hidden;
+}
+
+.rotating-slider-container {
+  perspective: 2000px;
+  width: 300px;
+  height: 400px;
+  position: relative;
+}
+
+.rotating-slider-ring {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.rotating-slider-img {
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Responsive tweaks */
+@media (max-width: 500px) {
+  .rotating-slider-container {
+    width: 250px;
+    height: 330px;
+  }
+
+  .rotating-slider-img {
+    width: 250px;
+    height: 330px;
+  }
+  .hero {
+        background-image: url('images/Web_Background_upto_500px.png');
+      }
+  .Sys{
+    max-width: 90%;
+  }
+}
+
+/* Zoom preview overlay */
+.zoom-preview-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.zoom-preview-image {
+  width: 90%;
+  height: 90%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+  /* box-shadow: 0 0 40px rgba(255,255,255,0.3); */
+}
+
+.close-zoom-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 3rem;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+.prev-zoom-btn,
+.next-zoom-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(1.5rem, 3vw, 2rem);;
+  color: white;
+  background: rgba(0,0,0,0.1);
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.prev-zoom-btn { left: 40px; }
+.next-zoom-btn { right: 40px; }
+
+.prev-zoom-btn:hover,
+.next-zoom-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+
+/* EMAIL KA CHAKKAR STARTS HERE */
+/* Contact Form Styles */
+
+.quote-top-down{
+  margin-top: 80px;
+}
+
+.contact-form-wrapper {
+  max-width: 550px;
+  margin: 40px auto;
+  padding: 10vw;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.quote-heading {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  color: #2e2e2e;
+  padding: 1.5rem 1rem;
+  /* border-bottom: 2px solid #656565;  */
+  width: fit-content;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.quote-hr{
+  width: 75%;               /* Set the length */
+  height: 2px;              /* Set the thickness */
+  background-color: #2e2e2e; /* Your desired color */
+  border: none;             /* Remove default border */
+  margin: 2px auto;        /* Center it and add spacing */
+  margin-bottom: 7%;
+}
+
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-color: #0077ff;
+}
+
+/* Wavy Button */
+.wavy-button {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background-color: #4d2b0a;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: clamp(0.8rem, 1vw, 1.5rem);;
+  font-weight: 500;
+}
+
+.wavy-button span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Modal Popup Styles */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  margin: 150px auto;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.popup-content button {
+  background-color: #0077ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.book-type-section {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.book-type-section label {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.book-count {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .contact-form-wrapper {
+  padding: 1vw 4vw 4vw 4vw;
+  
+}
+.quote-heading {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  line-height: 1.1;
+}
+}
+
+/* Footer starts here  */
+.custom-footer {
+  background-color: #4b2b14; /* Brown background */
+  color: white;
+  padding-top: 1vw;
+  text-align: left;
+  position: relative;
+}
+
+.footer-left {
+  position: absolute; /* now sits on top of the image */
+  top: 0px; /* adjust for vertical placement */
+  left: 4vw; /* matches your original left margin */
+  z-index: 2;
+}
+
+.footer-left h2 {
+  font-size: clamp(1.1rem, 5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.quote-btn {
+  margin-top: 1vw;
+  display: inline-block;
+  padding: 6px 18px;
+  border: 2px solid white;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  font-size: clamp(.7rem, 2vw, 1rem);
+}
+
+.quote-btn:hover {
+  background: white;
+  color: #4b2b14;
+}
+
+.footer-books {
+  margin-top: 20px;
+  position: relative; /* ensures absolute elements are positioned relative to this */
+}
+
+.footer-books img {
+  display: block;
+  max-width: 100%;   /* Normal size on big screens */
+  width: 100%;        /* Shrinks proportionally */
+  height: auto;       /* Keep aspect ratio */
+  object-fit: contain;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0px;
+  font-size: clamp(0.7rem, 2vw, 1rem);
+  flex-wrap: wrap;
+  padding-top: 1vw;
+}
+
+.footer-bottom a {
+  color: white;
+  text-decoration: none;
+  margin: 0 4vw;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-center a {
+  margin: 0 15px;
+  
+}
+
+/* .footer-center p {
+  margin-top: 5px;
+  font-size: 0.85rem;
+  
+} */
+
+.footer-dev-info {
+  color: white;
+  text-align: center;
+  font-size: clamp(8px, 1vw, 16px);
+  padding-bottom: 0.3vw;
+  
+}
+
+.footer-dev-info a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-dev-info a:hover {
+  text-decoration: underline;
+}
+
+
+/* Medium screens (tablets, < 900px) */
+@media (max-width: 900px) {
+  .footer-books img  {
+    max-width: 900px;  /* shrink */
+  }
+  .footer-left h2 {
+  font-size: clamp(0.8rem, 5vw, 2.6rem);
+  line-height: 1.2; /* tighter, you can adjust to 1.1 or 1.3 as needed */
+  }
+}
+
+/* Small screens (mobiles, < 500px) */
+@media (max-width: 500px) {
+  .footer-center a[href="index.html#services"],
+  .footer-center a[href="about.html"] {
+    display: none;
+  }
+  .footer-bottom {
+  padding: 0px 0px;
+  }
+  .footer-left h2 {
+  font-size: clamp(1.1rem, 5vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 1.4; /* tighter, you can adjust to 1.1 or 1.3 as needed */
+  }
+  .quote-btn {
+  padding: 0.2vw 3vw;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+}
+/* Footer Ends Here */
+
+/* SERVICES PAGE CSS STARTS HERE */
+.services-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 7% 15% 0% 15%;
+  flex-wrap: nowrap; /* ✅ stops early wrapping */
+}
+
+.services-image {
+  flex: 0 0 50%; /* ✅ fixed 50% width */
+}
+
+.services-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+.services-content {
+  flex: 0 0 50%; /* ✅ fixed 50% width */
+  max-width: 600px;
+}
+
+.section-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.services-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #333;
+  word-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+  .services-section {
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .services-image, .services-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .services-section {
+  
+  padding: 85px 10% 0% 10%;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.customers-section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .customers-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .customers-section p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .customers-logos {
+      margin-top: 2%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 80px;
+      
+    }
+
+     .customers-logos img {
+      height: 120px;          /* Fixed height */
+      width: auto;           /* Keep aspect ratio */
+      object-fit: contain;   /* Prevent distortion */
+      transition: transform 0.3s ease;
+    }
+@media (max-width: 700px){
+  .customers-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+}
+@media (max-width: 485px) {
+  .customers-logos {
+    margin-top: 6%;
+    flex-direction: column;   /* Stack logos vertically */
+    align-items: center;      /* Center them */
+    gap: 30px;                /* Reduce space between */
+  }  
+}
