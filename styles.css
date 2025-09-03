@@ -90,7 +90,8 @@
       right: -250px;
       width: 250px;
       height: 100%;
-      background-color: #fff1bf;
+      background-color: white;
+      /* background-color: #fff1bf; */
       box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
       padding: 2rem;
       display: flex;
@@ -175,7 +176,7 @@
 
     #contact-button-quote {
       margin-top: 10px;
-      background-color: #4b2b14f0; /* Green background */
+      background-color: #2d2d2d; /* Green background */
       color: white; /* Text color */
       padding: 5px 16px; /* Size */
       border: none;
