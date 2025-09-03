@@ -156,7 +156,7 @@
       text-align: center;
       color: #ffffff;
       
-      background-color: #fff1bf; /* fallback color */
+      background-color: #ffffff; /* fallback color */
       background-image: url('images/WebNewBackgroundForLargeScreens.jpg');
       /* background-image: url('images/LibraryWeb Web Design Final for web without main text.jpg'); */
       background-size: cover;
