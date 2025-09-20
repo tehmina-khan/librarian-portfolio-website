@@ -163,34 +163,33 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      text-shadow: 0 0 2px rgb(0, 0, 0); /*glow effect to text */
       text-shadow: 0 0 3px rgb(0, 0, 0); /*glow effect to text */
       text-shadow: 0 0 10px rgb(0, 0, 0); /*glow effect to text */
+      
     } 
     .Sys{
       max-width: 60%;
       margin: 0 auto;
       padding: 0 20px;
+      font-size: larger;
       font-weight: 600;
+
+      
     }
     
+.hero-quote-btn {
+  margin-top: 1vw;
+  display: inline-block;
+  padding: 4px 12px;
+  border: 2px solid white;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  background-color: #402408;
+  font-size: clamp(.6rem, 2vw, 0.9rem);
+}
 
-    #contact-button-quote {
-      margin-top: 10px;
-      background-color: #2d2d2d; /* Green background */
-      color: white; /* Text color */
-      padding: 5px 16px; /* Size */
-      border: none;
-      border-radius: 50px; /* Rounded corners */
-      font-size: 0.8rem;
-      font-weight: 400;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    #contact-button-quote:hover {
-      background-color: #3b2107; 
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    }
     /* HERO SECTION CSS ENDS HERE */
 
 
@@ -968,6 +967,8 @@
   .quote-btn {
   padding: 0.2vw 3vw;
   }
+
+  
   
 
 

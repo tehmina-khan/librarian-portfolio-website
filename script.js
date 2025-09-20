@@ -121,8 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // EMAIL KA CHAKKAR ENDS HERE
 
 
-// Close any popup
-
 console.log("JS file is connected till end!");
 
 

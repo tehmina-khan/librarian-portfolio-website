@@ -166,23 +166,7 @@
     }
     
 
-    #contact-button-quote {
-      margin-top: 10px;
-      background-color: #4b2b14f0; /* Green background */
-      color: white; /* Text color */
-      padding: 5px 16px; /* Size */
-      border: none;
-      border-radius: 50px; /* Rounded corners */
-      font-size: 0.8rem;
-      font-weight: 400;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    #contact-button-quote:hover {
-      background-color: #3b2107; 
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    }
+    
     /* HERO SECTION CSS ENDS HERE */
 
 
