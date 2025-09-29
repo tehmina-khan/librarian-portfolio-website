@@ -147,6 +147,7 @@
 
     /* HERO SECTION */
     .hero {
+      
       margin-top: 0px;
       /* Because nav is fixed */
       height: 100vh;
@@ -175,6 +176,15 @@
       font-size: larger;
       font-weight: 600;
     }
+    .hero h1,
+    .hero p {
+      background-color: #402408b9; /* dark transparent overlay */
+      display: inline-block;                /* wrap background around text only */
+      padding: 0px 8px;                     /* little breathing room */
+      border-radius: 8px;                   /* optional: rounded corners */
+      text-shadow: none;                    /* remove glow if you don’t want it */
+    }
+
     
 .hero-quote-btn {
   margin-top: 1vw;
