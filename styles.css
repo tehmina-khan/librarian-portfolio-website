@@ -174,20 +174,19 @@
       padding: 0 20px;
       font-size: larger;
       font-weight: 600;
-
-      
     }
     
 .hero-quote-btn {
   margin-top: 1vw;
   display: inline-block;
-  padding: 4px 12px;
+  padding: 6px 16px;
   border: 0px solid white;
   border-radius: 50px;
   color: white;
   text-decoration: none;
   background-color: #402408;
-  font-size: clamp(.6rem, 2vw, 0.9rem);
+  font-size: clamp(1rem, 2vw, 1rem);
+  font-weight: 600;
 }
 
     /* HERO SECTION CSS ENDS HERE */
@@ -429,7 +428,7 @@
   border: 2px solid white;
   border-radius: 50px;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -579,7 +578,6 @@
   font-weight: 600;
   margin: 5vw;
   margin-bottom: 0vw;
-  /* border-bottom: 2px solid #000; */
   display: inline-block;          /* Makes the border only as wide as the text */
 }
 .rotating-slider-stage {
@@ -851,7 +849,7 @@
 }
 
 .footer-left h2 {
-  font-size: clamp(1.1rem, 5vw, 2.6rem);
+  font-size: clamp(1.1rem, 5vw, 2.8rem);
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -860,11 +858,13 @@
   margin-top: 1vw;
   display: inline-block;
   padding: 6px 18px;
-  border: 2px solid white;
   border-radius: 50px;
   color: white;
   text-decoration: none;
+  border: 3px solid white;
   font-size: clamp(.7rem, 2vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.04cap;
 }
 
 .quote-btn:hover {
@@ -959,13 +959,21 @@
   padding: 0px 0px;
   }
   .footer-left h2 {
-  font-size: clamp(1.1rem, 5vw, 2.6rem);
-  font-weight: 600;
-  letter-spacing: 0px;
+  font-size: clamp(1.2rem, 5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.04cap;
   line-height: 1.4; /* tighter, you can adjust to 1.1 or 1.3 as needed */
   }
   .quote-btn {
-  padding: 0.2vw 3vw;
+
+  padding: 0.6vw 3vw;
+  border: 2px solid white;
+  }
+  .hero-quote-btn {
+    display: block;
+    width: 100%;          /* makes buttons stretch nicely */
+    margin: 10px 0;       /* adds spacing between buttons */
+    text-decoration: none;
   }
 
   
@@ -1029,6 +1037,20 @@
   line-height: 1.6;
   color: #333;
   word-spacing: 1px;
+}
+
+.about-get-in-touch-button{
+  margin-top: 2vw;
+  display: inline-block;
+  padding: 6px 16px;
+  border: 0px solid white;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  background-color: #402408;
+  font-size: clamp(1rem, 2vw, 1rem);
+  font-weight: 600;
+
 }
 
 @media (max-width: 700px) {
