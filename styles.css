@@ -595,7 +595,8 @@
   margin-right: 5vw;
   margin-left: 5vw;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: small;
 }
 .rotating-slider-stage {
   width: 100%;
