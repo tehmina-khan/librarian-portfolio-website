@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "images/approved2.png",
     "images/approved3.png",
     "images/image3.jpg",
-    "images/image7.jpg",
     "images/approved10.jpg",
     "images/image10.jpg",
     "images/approved9.jpg",
