@@ -37,21 +37,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextZoom = document.getElementById('nextZoom');
 
   const imagePaths = [
-    "images/image1.jpg",
-    "images/image2.jpg",
-    "images/image4.jpg",
-    "images/image5.jpg",
+    "images/approved1.jpg",
+    "images/approved2.png",
+    "images/approved3.png",
+    "images/image3.jpg",
     "images/image7.jpg",
     "images/image9.jpg",
     "images/image10.jpg",
     "images/image11.jpg",
     "images/image12.jpg",
     "images/image13.jpg",
-    "images/image14.jpg",
+    "images/image14.png",
     "images/image15.jpg",
-    "images/image16.jpg",
-    "images/image17.jpg",
-    "images/image18.jpg"
+    "images/image16.png",
+    "images/approved4.jpg",
+    "images/approved5.jpg"
   ];
 
   let currentIndex = 0;
