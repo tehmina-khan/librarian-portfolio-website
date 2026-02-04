@@ -245,7 +245,8 @@
   letter-spacing: 1px;
 }
 .about-me-p{
-  padding-left: 55%
+  padding-left: 55%;
+  font-size: clamp(1rem, 5vw, 1.5rem);
 }
 .My-Work{
   margin-top: 2%;
@@ -564,6 +565,7 @@
       }
       .about-me-p{
         padding-left: 35%;
+
       }
 
       .contact-container{
