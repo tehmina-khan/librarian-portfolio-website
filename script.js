@@ -119,36 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // EMAIL KA CHAKKAR ENDS HERE
 
 // Experimental button starts here
-function openModal() {
-  document.getElementById('modalOverlay').style.display = 'flex';
-  document.body.style.overflow = 'hidden'; // Prevents background scroll
-}
-
-function closeModal() {
-  document.getElementById('modalOverlay').style.display = 'none';
-  document.body.style.overflow = 'auto'; // Restores scroll
-}
-
-function copyNumber(btnElement) {
-  const number = document.getElementById('phoneNum').innerText;
-  
-  navigator.clipboard.writeText(number).then(() => {
-    // Visual feedback that it copied
-    const originalText = btnElement.innerText;
-    btnElement.innerText = "Copied!";
-    btnElement.style.backgroundColor = "#d4edda";
-    
-    setTimeout(() => {
-      btnElement.innerText = originalText;
-      btnElement.style.backgroundColor = "";
-    }, 2000);
-  });
-}
-
-// Close if user clicks outside the white box or hits Escape
-window.addEventListener('keydown', (e) => {
-  if (e.key === "Escape") closeModal();
-});
 
 //Experimenatl button ends here
 
