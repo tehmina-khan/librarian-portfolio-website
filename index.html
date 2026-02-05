@@ -55,7 +55,28 @@
       <a href="quote.html" class="hero-quote-btn">Get a Quote</a>
     </div>
   </div>
-  
+  <!-- SECTION 2: THE POPUP HTML (YOU MUST COPY THIS) -->
+    <!-- Place this right before your </body> tag -->
+    <div class="mirror-overlay" id="callOverlay">
+        <div class="popup-content">
+            <div class="popup-title">Contact Us</div>
+            
+            <div class="phone-number" id="displayNumber" title="Click to copy">
+                +92 000 000 0000
+                <span class="copy-feedback" id="feedbackMsg">Copied!</span>
+            </div>
+
+            <div class="action-buttons">
+                <a href="tel:+920000000000" class="action-btn btn-call">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <button class="action-btn btn-close" id="closeOverlayBtn">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- END POPUP HTML -->
 
   <!-- About me section starts here -->
   <div class="about-container">
@@ -203,6 +224,87 @@
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
   <script src="script.js"></script>
+  <!-- SECTION 3: THE SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Safe selector for the overlay
+            const overlay = document.getElementById('callOverlay');
+            
+            // Buttons
+            const triggers = document.querySelectorAll('.js-call-trigger'); 
+            
+            // Debugging check
+            if (!overlay) {
+                // If you see this alert, you forgot to copy the "mirror-overlay" HTML block!
+                alert("Installation Error: The 'mirror-overlay' HTML code is missing from the page. Please check the instructions.");
+                console.error("CRITICAL ERROR: Element #callOverlay not found.");
+            }
+
+            // 1. Open Popup
+            triggers.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault(); 
+                    
+                    if (overlay) {
+                        overlay.classList.add('active');
+                    } else {
+                        // Prevents the crash you were seeing
+                        alert("Error: Popup HTML is missing.");
+                    }
+                });
+            });
+
+            // 2. Close Popup logic
+            const closeBtn = document.getElementById('closeOverlayBtn');
+            function closePopup() {
+                if (overlay) overlay.classList.remove('active');
+            }
+
+            if(closeBtn) closeBtn.addEventListener('click', closePopup);
+            
+            if(overlay) {
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) closePopup();
+                });
+            }
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && overlay && overlay.classList.contains('active')) {
+                    closePopup();
+                }
+            });
+
+            // 3. Copy functionality
+            const displayNumber = document.getElementById('displayNumber');
+            const feedbackMsg = document.getElementById('feedbackMsg');
+
+            if(displayNumber) {
+                displayNumber.addEventListener('click', () => {
+                    const text = displayNumber.firstChild.textContent.trim();
+                    
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(text).then(showToast);
+                    } else {
+                        const ta = document.createElement('textarea');
+                        ta.value = text;
+                        document.body.appendChild(ta);
+                        ta.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(ta);
+                        showToast();
+                    }
+                });
+            }
+
+            function showToast() {
+                if(feedbackMsg) {
+                    feedbackMsg.classList.add('show');
+                    setTimeout(() => feedbackMsg.classList.remove('show'), 1500);
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
