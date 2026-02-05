@@ -266,11 +266,6 @@
       color: #000000; /* Added: Ensures number is beige and visible by default */
     }
 
-    .phone-number:hover {
-      opacity: 0.8;
-      color: #ffffff; /* Optional: Bright white on hover */
-    }
-
     .copy-feedback {
       font-size: 0.75rem;
       background: rgba(0,0,0,0.6);
