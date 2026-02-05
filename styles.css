@@ -195,7 +195,7 @@
   color: white;
   text-decoration: none;
   background-color: #402408;
-  font-size: clamp(1.2rem, 2.4vw, 1.2rem);
+  font-size: clamp(1.3rem, 2.6vw, 1.3rem);
   font-weight: 600;
   text-shadow: none;
 }
