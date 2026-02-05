@@ -262,8 +262,8 @@
       cursor: pointer;
       position: relative;
       display: inline-block;
-      transition: opacity 0.2s;
-      color: #fff1be; /* Added: Ensures number is beige and visible by default */
+      /* transition: opacity 0.2s; */
+      color: #000000; /* Added: Ensures number is beige and visible by default */
     }
 
     .phone-number:hover {
