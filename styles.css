@@ -1017,31 +1017,38 @@
 }
 
 /* Blur ONLY if supported */
-@supports (backdrop-filter: blur(8px)) {
-  .call-overlay {
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
+/* The mirror/blur background */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1); /* Slight tint */
+  backdrop-filter: blur(8px); /* The mirror effect */
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 998;
 }
 
-.call-overlay.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+/* Ensure the buttons stay on top of the blur */
+.btn-container {
+  position: relative;
+  z-index: 999;
 }
 
-.call-popup {
-  background: rgba(64, 36, 8, 0.9);
-  padding: 32px 40px;
-  border-radius: 22px;
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+/* Maintain your existing button styles, but add a transition for a smooth feel */
+.hero-quote-btn {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  /* Add your existing padding, colors, and borders here */
 }
 
-.call-popup p {
-  color: white;
-  font-size: 1.1rem;
-  margin-bottom: 16px;
+/* Class to highlight the button when active */
+.active-call {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 

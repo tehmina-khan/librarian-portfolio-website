@@ -119,24 +119,34 @@ document.addEventListener("DOMContentLoaded", function () {
 // EMAIL KA CHAKKAR ENDS HERE
 
 // Experimental button starts here
- const callBtn = document.getElementById("callBtn");
-  const callOverlay = document.getElementById("callOverlay");
+function showNumber() {
+  const btn = document.getElementById('callBtn');
+  const overlay = document.getElementById('overlay');
+  const phoneNumber = "+92 300 1234567"; // Replace with your actual number
 
-  callBtn.addEventListener("click", (e) => {
-    e.preventDefault();
+  // Change text and add active class
+  btn.innerText = phoneNumber;
+  btn.classList.add('active-call');
+  
+  // Change link from "javascript:void(0)" to the actual dialer link
+  btn.href = "tel:" + phoneNumber.replace(/\s/g, '');
 
-    callOverlay.style.display = "flex"; // force render
-    requestAnimationFrame(() => {
-      callOverlay.classList.add("active");
-    });
-  });
+  // Show the mirror overlay
+  overlay.style.display = 'block';
+}
 
-  callOverlay.addEventListener("click", () => {
-    callOverlay.classList.remove("active");
-    setTimeout(() => {
-      callOverlay.style.display = "none";
-    }, 300);
-  });
+function resetButton() {
+  const btn = document.getElementById('callBtn');
+  const overlay = document.getElementById('overlay');
+
+  // Reset button text and link
+  btn.innerText = "Have a Call";
+  btn.href = "javascript:void(0)";
+  btn.classList.remove('active-call');
+
+  // Hide the mirror overlay
+  overlay.style.display = 'none';
+}
 
 //Experimenatl button ends here
 
