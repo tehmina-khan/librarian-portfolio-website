@@ -263,11 +263,12 @@
       position: relative;
       display: inline-block;
       transition: opacity 0.2s;
+      color: #fff1be; /* Added: Ensures number is beige and visible by default */
     }
 
     .phone-number:hover {
       opacity: 0.8;
-      color: #fff1be;
+      color: #ffffff; /* Optional: Bright white on hover */
     }
 
     .copy-feedback {
@@ -320,14 +321,15 @@
     }
     
     .btn-close {
-      background: rgba(0, 0, 0, 0.2);
+      background: #5d3a1a; /* Changed: Solid Brown Background */
       color: white;
       border: 1px solid rgba(255,255,255,0.3);
     }
 
     .btn-close:hover {
-        background: rgba(0, 0, 0, 0.4);
+        background: #402408; /* Darker brown on hover */
     }
+
 
 /* Experimental popup ends here */
 
