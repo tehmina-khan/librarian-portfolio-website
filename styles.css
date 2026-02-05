@@ -189,13 +189,13 @@
 .hero-quote-btn {
   margin-top: 1vw;
   display: inline-block;
-  padding: 9px 24px;
+  padding: 8px 22px;
   border: 0px solid white;
   border-radius: 50px;
   color: white;
   text-decoration: none;
   background-color: #402408;
-  font-size: clamp(1.5rem, 3vw, 1.5rem);
+  font-size: clamp(1.2rem, 2.4vw, 1.2rem);
   font-weight: 600;
   text-shadow: none;
 }
