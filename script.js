@@ -119,16 +119,23 @@ document.addEventListener("DOMContentLoaded", function () {
 // EMAIL KA CHAKKAR ENDS HERE
 
 // Experimental button starts here
-  const callBtn = document.getElementById("callBtn");
+ const callBtn = document.getElementById("callBtn");
   const callOverlay = document.getElementById("callOverlay");
 
   callBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    callOverlay.classList.add("active");
+
+    callOverlay.style.display = "flex"; // force render
+    requestAnimationFrame(() => {
+      callOverlay.classList.add("active");
+    });
   });
 
   callOverlay.addEventListener("click", () => {
     callOverlay.classList.remove("active");
+    setTimeout(() => {
+      callOverlay.style.display = "none";
+    }, 300);
   });
 
 //Experimenatl button ends here
