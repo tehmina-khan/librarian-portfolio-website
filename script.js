@@ -121,20 +121,31 @@ document.addEventListener("DOMContentLoaded", function () {
 // Experimental button starts here
 function openModal() {
   document.getElementById('modalOverlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden'; // Prevents background scroll
 }
 
 function closeModal() {
   document.getElementById('modalOverlay').style.display = 'none';
+  document.body.style.overflow = 'auto'; // Restores scroll
 }
 
-function copyNumber() {
+function copyNumber(btnElement) {
   const number = document.getElementById('phoneNum').innerText;
+  
   navigator.clipboard.writeText(number).then(() => {
-    alert("Number copied to clipboard!");
+    // Visual feedback that it copied
+    const originalText = btnElement.innerText;
+    btnElement.innerText = "Copied!";
+    btnElement.style.backgroundColor = "#d4edda";
+    
+    setTimeout(() => {
+      btnElement.innerText = originalText;
+      btnElement.style.backgroundColor = "";
+    }, 2000);
   });
 }
 
-// Close modal if user hits 'Escape' key
+// Close if user clicks outside the white box or hits Escape
 window.addEventListener('keydown', (e) => {
   if (e.key === "Escape") closeModal();
 });

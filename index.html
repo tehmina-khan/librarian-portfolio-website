@@ -49,8 +49,9 @@
   <p class="Sys">Hi, I am</p>
   <h1>Muneerah Zia</h1>
   <p class="Sys">With over 28 Years of experience, I help create well-organized, standards-compliant libraries where knowledge feels clear, accessible, and inviting.</p>
-  <div>
-    <a href="javascript:void(0)" class="hero-quote-btn" onclick="openModal()">Have a Call</a> 
+  
+  <div class="btn-container">
+    <button type="button" class="hero-quote-btn" onclick="openModal()">Have a Call</button> 
     <a href="quote.html" class="hero-quote-btn">Get a Quote</a>
   </div>
 </div>
@@ -58,9 +59,9 @@
 <div id="modalOverlay" class="modal-overlay" onclick="closeModal()">
   <div class="modal-content" onclick="event.stopPropagation()">
     <h3>Contact Number</h3>
-    <p id="phoneNum">+92 300 1234567</p>
-    <button class="hero-quote-btn" onclick="copyNumber()">Copy Number</button>
-    <button class="close-link" onclick="closeModal()">Close</button>
+    <p id="phoneNum">+92 300 0000000</p>
+    <button type="button" class="copy-btn" onclick="copyNumber(this)">Copy Number</button>
+    <button type="button" class="close-link" onclick="closeModal()">Close</button>
   </div>
 </div>
 
