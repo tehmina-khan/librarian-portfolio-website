@@ -189,16 +189,26 @@
 .hero-quote-btn {
   margin-top: 1vw;
   display: inline-block;
-  padding: 6px 16px;
+
+  /* doubled padding */
+  padding: 12px 32px;
+
   border: 0px solid white;
-  border-radius: 50px;
+
+  /* slightly larger pill shape */
+  border-radius: 100px;
+
   color: white;
   text-decoration: none;
   background-color: #402408;
-  font-size: clamp(1rem, 2vw, 1rem);
+
+  /* doubled font size */
+  font-size: clamp(2rem, 4vw, 2rem);
+
   font-weight: 500;
   text-shadow: none;
 }
+
 
     /* HERO SECTION CSS ENDS HERE */
 
