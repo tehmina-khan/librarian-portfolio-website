@@ -1013,7 +1013,124 @@
 }
 
   /* Experimental button starts here */
+/* 2. The Mirror Overlay (Fixed position covers whole screen) */
+        .mirror-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px) saturate(180%); /* The Glass Effect */
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            z-index: 9999; /* Ensure it is on top of everything */
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
 
+        .mirror-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* 3. The Popup Box */
+        .popup-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Match button color */
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            max-width: 90%;
+            width: 400px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .mirror-overlay.active .popup-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .popup-title {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .phone-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+
+        .phone-number:hover {
+            opacity: 0.8;
+        }
+
+        /* "Copied" Tooltip */
+        .copy-feedback {
+            font-size: 0.75rem;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .copy-feedback.show {
+            opacity: 1;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .action-btn {
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-family: inherit;
+        }
+
+        .btn-call {
+            background: white;
+            color: #764ba2;
+        }
+        
+        .btn-close {
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
   /* Experimental button ends here */
 
 

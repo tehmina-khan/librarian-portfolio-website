@@ -119,7 +119,65 @@ document.addEventListener("DOMContentLoaded", function () {
 // EMAIL KA CHAKKAR ENDS HERE
 
 // Experimental button starts here
+document.addEventListener('DOMContentLoaded', () => {
+            const triggers = document.querySelectorAll('.js-call-trigger'); // Use class for multiple buttons
+            const overlay = document.getElementById('callOverlay');
+            const closeBtn = document.getElementById('closeOverlayBtn');
+            const displayNumber = document.getElementById('displayNumber');
+            const feedbackMsg = document.getElementById('feedbackMsg');
 
+            // 1. Open Popup
+            triggers.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault(); // Stop default link behavior
+                    overlay.classList.add('active');
+                });
+            });
+
+            // 2. Close Popup logic
+            function closePopup() {
+                overlay.classList.remove('active');
+            }
+
+            if(closeBtn) closeBtn.addEventListener('click', closePopup);
+            
+            if(overlay) {
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) closePopup();
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                    closePopup();
+                }
+            });
+
+            // 3. Copy functionality
+            if(displayNumber) {
+                displayNumber.addEventListener('click', () => {
+                    const text = displayNumber.firstChild.textContent.trim();
+                    
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(text).then(showToast);
+                    } else {
+                        // Fallback
+                        const ta = document.createElement('textarea');
+                        ta.value = text;
+                        document.body.appendChild(ta);
+                        ta.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(ta);
+                        showToast();
+                    }
+                });
+            }
+
+            function showToast() {
+                feedbackMsg.classList.add('show');
+                setTimeout(() => feedbackMsg.classList.remove('show'), 1500);
+            }
+        });
 //Experimenatl button ends here
 
 
