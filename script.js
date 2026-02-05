@@ -118,6 +118,21 @@ document.addEventListener("DOMContentLoaded", function () {
 // EMAIL KA CHAKKAR STARTS HERE
 // EMAIL KA CHAKKAR ENDS HERE
 
+// Experimental button starts here
+  const callBtn = document.getElementById("callBtn");
+  const callOverlay = document.getElementById("callOverlay");
+
+  callBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    callOverlay.classList.add("active");
+  });
+
+  callOverlay.addEventListener("click", () => {
+    callOverlay.classList.remove("active");
+  });
+
+//Experimenatl button ends here
+
 
 console.log("JS file is connected till end!");
 
