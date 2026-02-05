@@ -119,34 +119,25 @@ document.addEventListener("DOMContentLoaded", function () {
 // EMAIL KA CHAKKAR ENDS HERE
 
 // Experimental button starts here
-function showNumber() {
-  const btn = document.getElementById('callBtn');
-  const overlay = document.getElementById('overlay');
-  const phoneNumber = "+92 300 1234567"; // Replace with your actual number
-
-  // Change text and add active class
-  btn.innerText = phoneNumber;
-  btn.classList.add('active-call');
-  
-  // Change link from "javascript:void(0)" to the actual dialer link
-  btn.href = "tel:" + phoneNumber.replace(/\s/g, '');
-
-  // Show the mirror overlay
-  overlay.style.display = 'block';
+function openModal() {
+  document.getElementById('modalOverlay').style.display = 'flex';
 }
 
-function resetButton() {
-  const btn = document.getElementById('callBtn');
-  const overlay = document.getElementById('overlay');
-
-  // Reset button text and link
-  btn.innerText = "Have a Call";
-  btn.href = "javascript:void(0)";
-  btn.classList.remove('active-call');
-
-  // Hide the mirror overlay
-  overlay.style.display = 'none';
+function closeModal() {
+  document.getElementById('modalOverlay').style.display = 'none';
 }
+
+function copyNumber() {
+  const number = document.getElementById('phoneNum').innerText;
+  navigator.clipboard.writeText(number).then(() => {
+    alert("Number copied to clipboard!");
+  });
+}
+
+// Close modal if user hits 'Escape' key
+window.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") closeModal();
+});
 
 //Experimenatl button ends here
 
