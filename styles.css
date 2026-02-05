@@ -997,6 +997,20 @@
     text-decoration: none;
 
   }
+  .hero-quote-btn {
+  margin: 10px 0vw;
+  display: block;
+  padding: 7px 21px;
+  border: 0px solid white;
+  border-radius: 50px;
+  color: white;
+  background-color: #402408;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: none;
+  width: 100%;
+  text-decoration: none;
+}
 
   /* Experimental button starts here */
 
