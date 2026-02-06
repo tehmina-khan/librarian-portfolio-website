@@ -1,25 +1,25 @@
 
 console.log("JS file is connected!");
 // Hamburger CSS STARTS HERE
-    const hamburger = document.getElementById("hamburger");
-    const sideMenu = document.getElementById("sideMenu");
+const hamburger = document.getElementById("hamburger");
+const sideMenu = document.getElementById("sideMenu");
 
-    hamburger.addEventListener("click", () => {
-      sideMenu.classList.toggle("active");
-    });
+hamburger.addEventListener("click", () => {
+  sideMenu.classList.toggle("active");
+});
 
-    // Optional: Close menu when clicking a link
-    const sideLinks = sideMenu.querySelectorAll("a");
-    sideLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        sideMenu.classList.remove("active");
-      });
-    });
-    const closeBtn = document.getElementById("closeBtn");
-
-    closeBtn.addEventListener("click", () => {
+// Optional: Close menu when clicking a link
+const sideLinks = sideMenu.querySelectorAll("a");
+sideLinks.forEach(link => {
+  link.addEventListener("click", () => {
     sideMenu.classList.remove("active");
-    });
+  });
+});
+const closeBtn = document.getElementById("closeBtn");
+
+closeBtn.addEventListener("click", () => {
+  sideMenu.classList.remove("active");
+});
 // Hamburger CSS ENDS HERE
 
 // BLUR CSS STARTS HERE
@@ -27,7 +27,7 @@ console.log("JS file is connected!");
 // BLUR CSS ENDS HERE
 
 
-  // IMAGE SLIDER STARTS HERE
+// IMAGE SLIDER STARTS HERE
 document.addEventListener("DOMContentLoaded", function () {
   const ring = document.querySelector('.rotating-slider-ring');
   const zoomOverlay = document.getElementById('zoomPreview');
@@ -114,68 +114,74 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-  // IMAGE SLIDER ENDS HERE
+// IMAGE SLIDER ENDS HERE
 
 
 // EMAIL KA CHAKKAR STARTS HERE
 // EMAIL KA CHAKKAR ENDS HERE
 
 // Experimental button starts here
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* =========================
-     Overlay & Trigger Logic
-  ========================== */
+  // === Elements ===
   const overlay = document.getElementById('callOverlay');
   const triggers = document.querySelectorAll('.js-call-trigger');
 
-  if (overlay && triggers.length > 0) {
-    triggers.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        overlay.classList.add('active');
-      });
-    });
-
-    // Close popup
-    const closeBtn = document.getElementById('closeOverlayBtn');
-
-    function closePopup() {
-      overlay.classList.remove('active');
-    }
-
-    if (closeBtn) closeBtn.addEventListener('click', closePopup);
-
-    // Close on backdrop click
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) closePopup();
-    });
-
-    // Close on ESC key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && overlay.classList.contains('active')) {
-        closePopup();
-      }
-    });
-
-  } else {
-    console.warn("Mirror overlay (#callOverlay) not found or no trigger buttons. Popup will not open.");
-  }
-
-  /* =========================
-     Copy Button Logic
-  ========================== */
-  const copyBtn = document.getElementById('copyBtn');
   const displayNumber = document.getElementById('displayNumber');
-  const feedbackMsg = document.getElementById('feedbackMsg');
+  const callBtn = document.querySelector('.call-btn'); // popup main button
+  const copyBtn = document.querySelector('.copy-btn'); // popup copy button
+  const closeBtn = document.getElementById('closeOverlayBtn');
 
-  if (copyBtn && displayNumber && feedbackMsg) {
+  if (!overlay) return;
+
+  // === Open popup dynamically ===
+  triggers.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+
+      const type = btn.dataset.type;   // "phone" or "email"
+      const value = btn.dataset.value; // number or email
+
+      if (!value) return;
+
+      displayNumber.textContent = value;
+
+      // --- SHRINK font for long emails ---
+      displayNumber.style.fontSize = type === 'email' ? '1.5rem' : '2rem';
+
+      if (type === 'phone') {
+        callBtn.href = `tel:${value}`;
+        callBtn.textContent = 'Call';
+      } else if (type === 'email') {
+        // Gmail compose link
+        callBtn.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${value}`;
+        callBtn.target = "_blank"; // open in new tab
+        callBtn.textContent = 'Email';
+      }
+
+      overlay.classList.add('active');
+    });
+  });
+
+  // === Close popup ===
+  const closePopup = () => overlay.classList.remove('active');
+  if (closeBtn) closeBtn.addEventListener('click', closePopup);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closePopup(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('active')) closePopup(); });
+
+  // === Copy button logic ===
+  if (copyBtn && displayNumber) {
     copyBtn.addEventListener('click', () => {
       const text = displayNumber.textContent.trim();
+      if (!text) return;
 
+      // Get feedback inside this button only
+      const feedback = copyBtn.querySelector('.copy-feedback');
+      if (!feedback) return;
+
+      // Copy to clipboard
       if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(() => showToast());
+        navigator.clipboard.writeText(text).then(() => showToast(feedback));
       } else {
         const ta = document.createElement('textarea');
         ta.value = text;
@@ -183,19 +189,27 @@ document.addEventListener('DOMContentLoaded', () => {
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        showToast();
+        showToast(feedback);
       }
     });
-  }
 
-  function showToast() {
-    // Prevent showing feedback in wrong place
-    if (!feedbackMsg) return;
-    feedbackMsg.classList.add('show');
-    setTimeout(() => feedbackMsg.classList.remove('show'), 1500);
+    function showToast(feedbackElement) {
+      // Clear previous timeout
+      if (feedbackElement.hideTimeout) clearTimeout(feedbackElement.hideTimeout);
+
+      // Show feedback
+      feedbackElement.style.opacity = '1';
+
+      // Hide after 1.5 seconds
+      feedbackElement.hideTimeout = setTimeout(() => {
+        feedbackElement.style.opacity = '0';
+      }, 1500);
+    }
   }
 
 });
+
+
 //Experimenatl button ends here
 
 
