@@ -43,13 +43,15 @@ document.addEventListener("DOMContentLoaded", function () {
     "images/image3.jpg",
     "images/approved10.jpg",
     "images/image10.jpg",
-    "images/approved9.jpg",
     "images/image12.jpg",
     "images/image13.jpg",
     "images/image14.png",
     "images/image16.png",
     "images/approved4.jpg",
-    "images/approved5.jpg"
+    "images/approved5.jpg",
+    "images/new1.png",
+    "images/new2.png",
+    "images/new3.png"
   ];
 
   let currentIndex = 0;
@@ -120,7 +122,80 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Experimental button starts here
 
+    document.addEventListener('DOMContentLoaded', () => {
 
+      /* =========================
+         Overlay & Trigger Logic
+      ========================== */
+      const overlay = document.getElementById('callOverlay');
+      const triggers = document.querySelectorAll('.js-call-trigger');
+
+      if (!overlay) {
+        alert("Installation Error: The 'mirror-overlay' HTML code is missing from the page.");
+        console.error("CRITICAL ERROR: Element #callOverlay not found.");
+        return;
+      }
+
+      // Open popup
+      triggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          overlay.classList.add('active');
+        });
+      });
+
+      // Close popup
+      const closeBtn = document.getElementById('closeOverlayBtn');
+
+      function closePopup() {
+        overlay.classList.remove('active');
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', closePopup);
+
+      // Close on backdrop click
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closePopup();
+      });
+
+      // Close on ESC key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+          closePopup();
+        }
+      });
+
+      /* =========================
+         Copy Button Logic
+      ========================== */
+      const copyBtn = document.getElementById('copyBtn');
+      const displayNumber = document.getElementById('displayNumber');
+      const feedbackMsg = document.getElementById('feedbackMsg');
+
+      if (copyBtn && displayNumber && feedbackMsg) {
+        copyBtn.addEventListener('click', () => {
+          const text = displayNumber.textContent.trim();
+
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(showToast);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            showToast();
+          }
+        });
+      }
+
+      function showToast() {
+        feedbackMsg.classList.add('show');
+        setTimeout(() => feedbackMsg.classList.remove('show'), 1500);
+      }
+
+    });
 //Experimenatl button ends here
 
 

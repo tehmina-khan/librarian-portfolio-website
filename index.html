@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
-    
+
 </head>
 
 
@@ -49,34 +49,44 @@
     <p class="Sys">Hi, I am</p>
     <h1>Muneerah Zia</h1>
     <!-- <p style="font-weight: 600;">Crafting Libraries That Feel Like Home For Every Reader </p> -->
-    <p class="Sys">With over 28 Years of experience, I help create well-organized, standards-compliant libraries where knowledge feels clear, accessible, and inviting.</p>
+    <p class="Sys">With over 28 Years of experience, I help create well-organized, standards-compliant libraries where
+      knowledge feels clear, accessible, and inviting.</p>
     <div>
-      <a href="tel:+923323452771" class="hero-quote-btn js-call-trigger">Have a Call**</a>
+      <a href="tel:+923323452771" class="hero-quote-btn js-call-trigger">Have a Call</a>
       <a href="quote.html" class="hero-quote-btn">Get a Quote</a>
     </div>
   </div>
   <!-- SECTION 2: THE POPUP HTML (YOU MUST COPY THIS) -->
-    <!-- Place this right before your </body> tag -->
-    <div class="mirror-overlay" id="callOverlay">
-        <div class="popup-content">
-            <div class="popup-title">Contact Us</div>
-            
-            <div class="phone-number" id="displayNumber" title="Click to copy">
-                +923323452771
-                <span class="copy-feedback" id="feedbackMsg">Copied!</span>
-            </div>
+  <!-- Place this right before your </body> tag -->
+  <div class="mirror-overlay" id="callOverlay">
+    <div class="call-popup">
 
-            <div class="action-buttons">
-                <a href="tel:+923323452771" class="action-btn btn-call">
-                    <i class="fas fa-phone"></i> Call Now
-                </a>
-                <button class="action-btn btn-close" id="closeOverlayBtn">
-                    Close
-                </button>
-            </div>
-        </div>
+      <!-- Close -->
+      <button class="close-btn" id="closeOverlayBtn" aria-label="Close popup">
+        ✕
+      </button>
+
+      <div class="popup-title">Contact Me</div>
+
+      <div class="phone-number" id="displayNumber">
+        +923323452771
+      </div>
+<div class="button-container">
+      <div class="action-buttons">
+        <a href="tel:+923323452771" class="action-btn call-btn">
+          Call
+        </a>
+
+        <button class="action-btn copy-btn" id="copyBtn">
+          Copy
+          <span class="copy-feedback" id="feedbackMsg">Copied!</span>
+        </button>
+      </div>
+</div>
     </div>
-    <!-- END POPUP HTML -->
+  </div>
+
+  <!-- END POPUP HTML -->
 
   <!-- About me section starts here -->
   <div class="about-container">
@@ -95,36 +105,40 @@
     </div><!-- Octagonal Button Ends here -->
   </div>
 
-<!-- SERVICES SECTION STARTS HERE  -->
- <section class="services" id="services">
+  <!-- SERVICES SECTION STARTS HERE  -->
+  <section class="services" id="services">
     <h1>WHAT I CAN DO FOR YOUR LIBRARY!</h1>
     <div class="service-cards">
-      
+
       <div class="card">
         <div class="number">01</div>
         <h2>Record Maintenance</h2>
         <p>
-          Maintain accurate records of all library materials in Excel and manual registers for precise cataloging and easy tracking.
+          Maintain accurate records of all library materials in Excel and manual registers for precise cataloging
+          and easy tracking.
         </p>
       </div>
       <div class="card">
         <div class="number">02</div>
         <h2>Acquisition of Materials</h2>
         <p>
-          Source books, journals, and digital resources that meet user needs, securing the best value through trusted vendors and competitive quotations, locally and internationally.</p>
+          Source books, journals, and digital resources that meet user needs, securing the best value through trusted
+          vendors and competitive quotations, locally and internationally.</p>
       </div>
       <div class="card">
         <div class="number">03</div>
         <h2> Cataloging and Classification</h2>
         <p>
-          Label, catalog, and classify materials using recognized systems such as Dewey Decimal and Library of Congress, ensuring a well-structured and easily navigable collection.
+          Label, catalog, and classify materials using recognized systems such as Dewey Decimal and Library of Congress,
+          ensuring a well-structured and easily navigable collection.
         </p>
       </div>
       <div class="card">
         <div class="number">04</div>
         <h2>Shelving and Arrangement</h2>
         <p>
-          Arrange books and resources systematically to maintain order, improve accessibility, and prevent loss or misplacement.
+          Arrange books and resources systematically to maintain order, improve accessibility, and prevent loss or
+          misplacement.
 
         </p>
       </div>
@@ -132,23 +146,25 @@
         <div class="number">05</div>
         <h2>Digital Resource Access</h2>
         <p>
-          Integrate digital solutions to provide access to e-books, online journals, databases, and digital libraries, supporting both in-person and remote learning and research.
+          Integrate digital solutions to provide access to e-books, online journals, databases, and digital libraries,
+          supporting both in-person and remote learning and research.
         </p>
       </div>
       <div class="card">
         <div class="number">06</div>
         <h2>Stationery & Supplies Management</h2>
         <p>
-          Organize and manage library stationery such as accession stamps, book pockets, book cards, accession registers, and issue registers to ensure smooth daily operations.
+          Organize and manage library stationery such as accession stamps, book pockets, book cards, accession
+          registers, and issue registers to ensure smooth daily operations.
         </p>
       </div>
     </div>
   </section>
- <!-- SERVICES SECION ENDS HERE -->
-  
+  <!-- SERVICES SECION ENDS HERE -->
+
 
   <!-- IMAGE SLIDER STARTS HERE -->
-   <h1  id="slider-h1">LIBRARIES I HAVE BUILT</h1>
+  <h1 id="slider-h1">LIBRARIES I HAVE BUILT</h1>
   <section class="rotating-slider-stage">
     <div class="rotating-slider-container">
       <div class="rotating-slider-ring">
@@ -164,147 +180,70 @@
       <button class="close-zoom-btn" id="closeZoom">×</button>
     </div>
   </section>
-      <p class="slider-note">*Click on an image to view in full mode and slider control. <br> **Not a complete list of my library work. Feel free to reach out to learn more or discuss your needs.</p> <br><br>
+  <p class="slider-note">*Click on an image to view in full mode and slider control. <br> **Not a complete list of my
+    library work. Feel free to reach out to learn more or discuss your needs.</p> <br><br>
 
   <!-- IMAGE SLIDER ENDS HERE -->
 
   <!-- Past Organizations showcase starts here-->
-   <section class="customers-section">
-      <span class="section-label">LIBRARIES IN PRACTICE</span>
-    <h2>Organizations Where I Built Libraries</h2> 
+  <section class="customers-section">
+    <span class="section-label">LIBRARIES IN PRACTICE</span>
+    <h2>Organizations Where I Built Libraries</h2>
 
     <div class="customers-logos">
       <img src="images/Beaconhouse-logo.png" alt="Beaconhouse-ogo 1">
       <img src="images/AyeshaBawani-logo.png" alt="AyeshaBawani-logo">
       <img src="images/SceptreCollege-logo-black.png" alt="SceptreCollege-logo-black">
-      <img src="images/BritishOverseasSchool-logo.jpg" alt="BritishOverseasSchool-logo" >
-      <img src="images/TRC logo.png" alt="TRC-logo" >
+      <img src="images/BritishOverseasSchool-logo.jpg" alt="BritishOverseasSchool-logo">
+      <img src="images/TRC logo.png" alt="TRC-logo">
 
     </div>
   </section>
-<br><br>
+  <br><br>
   <!-- Past Organizations showcase ends here-->
 
   <!-- CONTACT PAGE STARTS HERE  -->
-   
+
   <footer class="custom-footer">
-  <div class="footer-books">
-    <picture>
-      <!-- This image will show for screens ≤ 500px -->
-      <source srcset="images/experimental-01.png" media="(max-width: 450px)">
-      
-      <!-- Default image (for larger screens) -->
-      <img src="images/footer_v11-01.png" alt="Books illustration">
-     </picture>
+    <div class="footer-books">
+      <picture>
+        <!-- This image will show for screens ≤ 500px -->
+        <source srcset="images/experimental-01.png" media="(max-width: 450px)">
 
-    <div class="footer-left">
-      <h2>LET'S CREATE GREAT LIBRARIES, <br>TOGETHER</h2>
-      <a href="tel:+923323452771" class="quote-btn">+92 332 3452771</a>
-      <a href="quote.html" class="quote-btn">Get a quote</a>
+        <!-- Default image (for larger screens) -->
+        <img src="images/footer_v11-01.png" alt="Books illustration">
+      </picture>
+
+      <div class="footer-left">
+        <h2>LET'S CREATE GREAT LIBRARIES, <br>TOGETHER</h2>
+        <a href="tel:+923323452771" class="quote-btn">+92 332 3452771</a>
+        <a href="quote.html" class="quote-btn">Get a quote</a>
+      </div>
     </div>
-  </div>
 
-  <div class="footer-bottom">
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muneerahzia77@gmail.com" 
-            target="_blank" 
-            class="footer-link">Gmail
-          </a>
-    <div class="footer-center">
-      <a href="index.html">Home</a>
-      <a href="index.html#services">Services</a>
-      <a href="about.html">About</a>
+    <div class="footer-bottom">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muneerahzia77@gmail.com" target="_blank"
+        class="footer-link">Gmail
+      </a>
+      <div class="footer-center">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="about.html">About</a>
+      </div>
+      <a href="https://www.linkedin.com/in/muneerah-zia-15910991/" target="_blank" class="footer-link">LinkedIn</a>
     </div>
-    <a href="https://www.linkedin.com/in/muneerah-zia-15910991/" target="_blank" class="footer-link">LinkedIn</a>
-  </div>
 
-  <p class="footer-dev-info">Developed by: <a href="https://www.linkedin.com/in/tehmina-ilyas-khan/">Tehmina Khan</a></p>
-</footer>
+    <p class="footer-dev-info">Developed by: <a href="https://www.linkedin.com/in/tehmina-ilyas-khan/">Tehmina Khan</a>
+    </p>
+  </footer>
   <!-- CONTACT PAGE ENDS HERE  -->
 
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
   <script src="script.js"></script>
   <!-- SECTION 3: THE SCRIPT -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Safe selector for the overlay
-            const overlay = document.getElementById('callOverlay');
-            
-            // Buttons
-            const triggers = document.querySelectorAll('.js-call-trigger'); 
-            
-            // Debugging check
-            if (!overlay) {
-                // If you see this alert, you forgot to copy the "mirror-overlay" HTML block!
-                alert("Installation Error: The 'mirror-overlay' HTML code is missing from the page. Please check the instructions.");
-                console.error("CRITICAL ERROR: Element #callOverlay not found.");
-            }
 
-            // 1. Open Popup
-            triggers.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault(); 
-                    
-                    if (overlay) {
-                        overlay.classList.add('active');
-                    } else {
-                        // Prevents the crash you were seeing
-                        alert("Error: Popup HTML is missing.");
-                    }
-                });
-            });
 
-            // 2. Close Popup logic
-            const closeBtn = document.getElementById('closeOverlayBtn');
-            function closePopup() {
-                if (overlay) overlay.classList.remove('active');
-            }
-
-            if(closeBtn) closeBtn.addEventListener('click', closePopup);
-            
-            if(overlay) {
-                overlay.addEventListener('click', (e) => {
-                    if (e.target === overlay) closePopup();
-                });
-            }
-
-            // Close on Escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && overlay && overlay.classList.contains('active')) {
-                    closePopup();
-                }
-            });
-
-            // 3. Copy functionality
-            const displayNumber = document.getElementById('displayNumber');
-            const feedbackMsg = document.getElementById('feedbackMsg');
-
-            if(displayNumber) {
-                displayNumber.addEventListener('click', () => {
-                    const text = displayNumber.firstChild.textContent.trim();
-                    
-                    if (navigator.clipboard) {
-                        navigator.clipboard.writeText(text).then(showToast);
-                    } else {
-                        const ta = document.createElement('textarea');
-                        ta.value = text;
-                        document.body.appendChild(ta);
-                        ta.select();
-                        document.execCommand('copy');
-                        document.body.removeChild(ta);
-                        showToast();
-                    }
-                });
-            }
-
-            function showToast() {
-                if(feedbackMsg) {
-                    feedbackMsg.classList.add('show');
-                    setTimeout(() => feedbackMsg.classList.remove('show'), 1500);
-                }
-            }
-        });
-    </script>
 </body>
 
 </html>

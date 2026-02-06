@@ -1,191 +1,210 @@
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    html, body {
-      overflow: auto;
-      scrollbar-width: none;         /* Firefox */
-      -ms-overflow-style: none;      /* IE and Edge */
-      scroll-behavior: smooth;
+html,
+body {
+  overflow: auto;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scroll-behavior: smooth;
 
-    }
+}
 
-    html::-webkit-scrollbar, 
-    body::-webkit-scrollbar {
-      display: none;                 /* Chrome, Safari, Opera */
-    }
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
 
-    nav {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 70px;
-        background: rgba(255, 255, 255, 0.388); /* transparent white */
-        backdrop-filter: blur(8px); /* glass blur effect */
-        -webkit-backdrop-filter: blur(20px); /* Safari support */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 1rem;
-        z-index: 1000;
-        color: rgb(0, 0, 0);
-    }
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.388);
+  /* transparent white */
+  backdrop-filter: blur(8px);
+  /* glass blur effect */
+  -webkit-backdrop-filter: blur(20px);
+  /* Safari support */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  z-index: 1000;
+  color: rgb(0, 0, 0);
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      /* Let it match navbar height */
-    }
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  /* Let it match navbar height */
+}
 
-    .logo img {
-      height: 50px;
-      /* You can adjust this size */
-      width: auto;
-      object-fit: contain;
-    }
-
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #000000;
-      font-size: 1rem;
-      transition: color 0.3s;
-      text-shadow: 0 0 10px rgb(255, 255, 255); /*glow effect to text */
-      font-weight: 500;
-    }
-
-    .nav-links a:hover {
-      color: #555;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 4px;
-      margin-right: 1rem;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: #333;
-      border-radius: 2px;
-    }
-
-    /* Sidebar Menu */
-    .side-menu {
-      position: fixed;
-      top: 0;
-      right: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: white;
-      /* background-color: #fff1bf; */
-      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      transition: right 0.3s ease;
-
-      z-index: 1001;
-      /* 👈 Add this line to ensure it appears above the navbar */
-    }
-
-    .side-menu a {
-      position: relative;
-      display: inline-block;
-      font-size: 1.2rem;
-      text-decoration: none;
-      color: #333;
-      margin: 0.5rem 0;
-      transition: color 0.3s ease;
-    }
-
-    .side-menu a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background-color: #555;
-      transition: width 0.3s ease;
-    }
-
-    .side-menu a:hover {
-      color: #666;
-    }
-
-    .side-menu a:hover::after {
-      width: 100%;
-    }
+.logo img {
+  height: 50px;
+  /* You can adjust this size */
+  width: auto;
+  object-fit: contain;
+}
 
 
-    .side-menu.active {
-      right: 0;
-    }
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
 
-    .close-btn {
-      align-self: flex-end;
-      font-size: 2rem;
-      cursor: pointer;
-      color: #333;
-      margin-bottom: 1rem;
-    }
+.nav-links a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 1rem;
+  transition: color 0.3s;
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+  /*glow effect to text */
+  font-weight: 500;
+}
 
-    /* HERO SECTION */
-    .hero {
-      
-      margin-top: 0px;
-      /* Because nav is fixed */
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #ffffff;
-      
-      background-color: #ffffff; /* fallback color */
-      background-image: url('images/WebNewBackgroundForLargeScreens.jpg');
-      /* background-image: url('images/LibraryWeb Web Design Final for web without main text.jpg'); */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      text-shadow: 0 0 2px rgb(0, 0, 0); /*glow effect to text */
-      text-shadow: 0 0 3px rgb(0, 0, 0); /*glow effect to text */
-      text-shadow: 0 0 10px rgb(0, 0, 0); /*glow effect to text */
-      
-    } 
-    .Sys{
-      max-width: 60%;
-      margin: 0 auto;
-      padding: 0 20px;
-      font-size: larger;
-      font-weight: 600;
-    }
-    .hero h1,
-    .hero p {
-      background-color: #402408b9; /* dark transparent overlay */
-      display: inline-block;                /* wrap background around text only */
-      padding: 0px 8px;                     /* little breathing room */
-      border-radius: 8px;                   /* optional: rounded corners */
-      text-shadow: none;                    /* remove glow if you don’t want it */
-    }
+.nav-links a:hover {
+  color: #555;
+}
 
-    
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  margin-right: 1rem;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* Sidebar Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  /* background-color: #fff1bf; */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: right 0.3s ease;
+
+  z-index: 1001;
+  /* 👈 Add this line to ensure it appears above the navbar */
+}
+
+.side-menu a {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #333;
+  margin: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.side-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #555;
+  transition: width 0.3s ease;
+}
+
+.side-menu a:hover {
+  color: #666;
+}
+
+.side-menu a:hover::after {
+  width: 100%;
+}
+
+
+.side-menu.active {
+  right: 0;
+}
+
+.close-btn {
+  align-self: flex-end;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* HERO SECTION */
+.hero {
+
+  margin-top: 0px;
+  /* Because nav is fixed */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+
+  background-color: #ffffff;
+  /* fallback color */
+  background-image: url('images/WebNewBackgroundForLargeScreens.jpg');
+  /* background-image: url('images/LibraryWeb Web Design Final for web without main text.jpg'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-shadow: 0 0 2px rgb(0, 0, 0);
+  /*glow effect to text */
+  text-shadow: 0 0 3px rgb(0, 0, 0);
+  /*glow effect to text */
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+  /*glow effect to text */
+
+}
+
+.Sys {
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.hero h1,
+.hero p {
+  background-color: #402408b9;
+  /* dark transparent overlay */
+  display: inline-block;
+  /* wrap background around text only */
+  padding: 0px 8px;
+  /* little breathing room */
+  border-radius: 8px;
+  /* optional: rounded corners */
+  text-shadow: none;
+  /* remove glow if you don’t want it */
+}
+
+
 .hero-quote-btn {
   margin-top: 1vw;
   display: inline-block;
@@ -201,160 +220,158 @@
 }
 
 /* Experimental popup starts here */
+/* ===== Overlay ===== */
 .mirror-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px) saturate(180%);
-      -webkit-backdrop-filter: blur(15px) saturate(180%);
-      z-index: 9999;
-      opacity: 0;
-      visibility: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: all 0.3s ease;
-    }
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
 
-    .mirror-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
+.mirror-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
 
-    .popup-content {
-      /* Changed from Purple Gradient to Brown Gradient to match your site */
-      background: linear-gradient(135deg, #402408 0%, #6b4c2e 100%);
-      padding: 40px;
-      border-radius: 20px;
-      text-align: center;
-      color: white;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-      transform: scale(0.9);
-      opacity: 0;
-      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      position: relative;
-      max-width: 90%;
-      width: 400px;
-      font-family: 'Poppins', sans-serif;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
+/* ===== Popup ===== */
+/* ===== Call Popup ONLY ===== */
+.call-popup {
+  background: white;/*linear-gradient(135deg, #402408, #6b4c2e); */
+  border-radius: 22px;
+  padding: 35px 20px 15px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  color: white;
+  position: relative;
+}
 
-    .mirror-overlay.active .popup-content {
-      transform: scale(1);
-      opacity: 1;
-    }
 
-    .popup-title {
-      font-size: 0.9rem;
-      margin-bottom: 15px;
-      opacity: 0.9;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
+/* ===== Close button ===== */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
 
-    .phone-number {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 25px;
-      cursor: pointer;
-      position: relative;
-      display: inline-block;
-      /* transition: opacity 0.2s; */
-      color: #000000; /* Added: Ensures number is beige and visible by default */
-    }
 
-    .copy-feedback {
-      font-size: 0.75rem;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      padding: 4px 8px;
-      border-radius: 4px;
-      position: absolute;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-    }
+.popup-title {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #000;
+}
 
-    .copy-feedback.show {
-      opacity: 1;
-    }
+.phone-number {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #000;
+}
 
-    .action-buttons {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-    }
+/* ===== Buttons ===== */
+.call-popup .button-container {
+  display: flex;
+  gap: 20px; /* space between buttons */
+  justify-content: center; /* center horizontally */
+  margin-bottom: 20px; /* optional spacing below buttons */
+}
 
-    .action-btn {
-      padding: 10px 20px;
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      font-family: inherit;
-      color: red;
-    }
+.call-popup .action-btn {
+  display: inline-flex; /* allows flex alignment inside the button */
+  width: 40px;
+  height: 40px;
+  border-radius: 80px;
+  background-color:#402408;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+  padding: 5px 60px;
+  margin-bottom: 8px;
+}
 
-    .btn-call {
-      background: white;
-      color: #402408; /* Brown text */
-    }
+.call-popup .action-btn:hover {
+  background-color: #341d06;
+  transform: scale(1.08);
+}
 
-    .btn-call:hover {
-        transform: scale(1.05);
-    }
-    .btn-close{
-      text-decoration: none;
-      background-color: red;
-    }
+/* ===== Copy feedback ===== */
+.copy-feedback {
+  position: absolute;
+  bottom: -22px;
+  font-size: 0.7rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 3px 7px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.copy-feedback.show {
+  opacity: 1;
+}
+
 /* Experimental popup ends here */
+/* HERO SECTION CSS ENDS HERE */
 
-    /* HERO SECTION CSS ENDS HERE */
 
+/* COLUMN LAYOUT STARTS HERE */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  /* height: 100vh;  This sets height 100vH means full screen size height*/
+}
 
- /* COLUMN LAYOUT STARTS HERE */
-    .about-container {
-      display: flex;
-      flex-direction: column;
-      /* height: 100vh;  This sets height 100vH means full screen size height*/
-    }
+/* Each section takes 50% */
+.box {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
-    /* Each section takes 50% */
-    .box {
-      flex: 1;
-      padding: 20px;
-      box-sizing: border-box;
-    }
+.left {
+  /* background-color: #f4a261; */
+  width: 50%;
 
-    .left {
-      /* background-color: #f4a261; */
-      width: 50%;
-      
-      word-wrap: break-word;
-    }
+  word-wrap: break-word;
+}
 
-    .right {
-      /* background-color: #2a9d8f;
+.right {
+  /* background-color: #2a9d8f;
       color: white; */
-      width: 50%;
-      
-    }
+  width: 50%;
+
+}
+
 /* COLUMN LAYOUT ENDS HERE */
 
 
 /* About me section's CSS starts here */
-.about-me-h2{
+.about-me-h2 {
   margin-top: 8%;
   margin-right: 8vw;
   margin-left: 8vw;
@@ -364,11 +381,13 @@
   font-weight: 700;
   letter-spacing: 1px;
 }
-.about-me-p{
+
+.about-me-p {
   padding-left: 55%;
   font-size: clamp(1rem, 5vw, 1.5rem);
 }
-.My-Work{
+
+.My-Work {
   margin-top: 2%;
   margin-right: 8vw;
   margin-left: 8vw;
@@ -378,22 +397,26 @@
   letter-spacing: 1px;
   text-align: left;
 }
-.ri-bard-line{
+
+.ri-bard-line {
   font-size: 60%;
 }
+
 /* About me section's CSS ends here */
 
 /* Octagonal Button starts Here */
- /* Centering everything */
+/* Centering everything */
 /* Centering container */
 .oc {
   display: flex;
-  justify-content: flex-end; /* Push to the right */
+  justify-content: flex-end;
+  /* Push to the right */
   align-items: center;
   padding: 2rem;
   margin-right: 1vw;
 }
-.oc{
+
+.oc {
   padding: 12px 24px;
   font-size: 1rem;
   color: white;
@@ -404,9 +427,12 @@
 }
 
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-8px);
   }
@@ -426,12 +452,11 @@
   width: 100%;
   height: 100%;
   background-color: #fff1be;
-  clip-path: polygon(
-    30% 0%, 70% 0%, 100% 30%, 100% 70%,
-    70% 100%, 30% 100%, 0% 70%, 0% 30%
-  );
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%,
+      70% 100%, 30% 100%, 0% 70%, 0% 30%);
   animation: rotateOctagon 18s linear infinite;
 }
+
 /* Make the entire octagon clickable */
 .octagon-link {
   position: absolute;
@@ -442,6 +467,7 @@
   height: 100%;
   text-decoration: none;
 }
+
 /* Centered text */
 .octagon-text {
   position: absolute;
@@ -459,31 +485,40 @@
 
 /* Rotation animation */
 @keyframes rotateOctagon {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Octagonal button ends here */
 
 /* CONTACT SECTION CSS STARTS HERE  */
-.contact-container-bg{
+.contact-container-bg {
   background-color: #4d2b0a;
   padding-top: 4%;
   padding-bottom: 1%;
 }
-.contact-container{
+
+.contact-container {
   margin: 4%;
 }
-.contact-h2{
+
+.contact-h2 {
   margin-top: 6%;
   font-size: clamp(2rem, 10vw, 3rem);
   line-height: 1;
   letter-spacing: 1px;
   color: white;
 }
-.ri-book-shelf-line{
+
+.ri-book-shelf-line {
   font-weight: 100;
 }
+
 /* .contact-button{
   background-color: transparent;
   border-style: double;
@@ -494,6 +529,7 @@
 /* Font + Icons */
 @import url('https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 .contact-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -523,33 +559,44 @@
 }
 
 .gmail-btn {
-  background-color:transparent;
+  background-color: transparent;
   border-color: #402408;
 }
+
 .contact-hr {
-  width: 80%;               /* Set the length */
-  height: 2px;              /* Set the thickness */
-  background-color: #381f06; /* Your desired color */
-  border: none;             /* Remove default border */
-  margin: 2px auto;        /* Center it and add spacing */
+  width: 80%;
+  /* Set the length */
+  height: 2px;
+  /* Set the thickness */
+  background-color: #381f06;
+  /* Your desired color */
+  border: none;
+  /* Remove default border */
+  margin: 2px auto;
+  /* Center it and add spacing */
 }
 
 .contact-container-p {
   padding-top: 1vw;
   text-align: center;
-  color: white; /* Optional: set a visible text color */
+  color: white;
+  /* Optional: set a visible text color */
   font-size: clamp(0.6rem, 3vw, 0.8rem);
 }
+
 .contact-container-p2 {
   text-align: center;
-  color: white; /* Optional: set a visible text color */
+  color: white;
+  /* Optional: set a visible text color */
   font-size: clamp(0.5rem, 2.5vw, 0.7rem);
 }
 
 .quote-button-wrapper {
   display: flex;
-  justify-content: flex-end; /* Pushes button to the right */
-  margin-top: 20px; /* optional spacing */
+  justify-content: flex-end;
+  /* Pushes button to the right */
+  margin-top: 20px;
+  /* optional spacing */
 }
 
 #contact-button-quote-footer {
@@ -572,49 +619,50 @@
     width: 100%;
     margin: 0 auto;
   }
-  
+
 }
 
 /* CONTACT SECTION CSS ENDS HERE  */
 
 
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
 
-      .hamburger {
-        display: flex;
-      }
+  .hamburger {
+    display: flex;
+  }
 
-      /* Responsive: Stack on small screens */
-      .about-container {
-        flex-direction: column;
-      }
+  /* Responsive: Stack on small screens */
+  .about-container {
+    flex-direction: column;
+  }
 
-      .container {
-        flex-direction: column;
-      }
+  .container {
+    flex-direction: column;
+  }
 
-      .box {
-        width: 100%;
-        height: auto;
-      } 
+  .box {
+    width: 100%;
+    height: auto;
+  }
 
-    } 
+}
 
 /* SERVICES SECTION STARTS HERE */
-.services{
+.services {
   background-color: #fff5d3;
   padding: 5vw;
-  
-  
+
+
 }
+
 .services h1 {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  
+
 }
 
 .service-cards {
@@ -624,7 +672,8 @@
   flex-wrap: wrap;
 }
 
-.card { /*The line in the card and inside*/
+.card {
+  /*The line in the card and inside*/
   flex: 1 1 300px;
   padding: 1.5rem 0rem;
   border-top: 1px solid #f7d370;
@@ -660,73 +709,83 @@
 /* SERVICES SECTION ENDS HERE */
 
 /* IMAGE SLIDER CSS STARTS HERE */
-    @media (max-width: 500px) {
-      .logo img {
-        height: 40px;
-        /* You can adjust this size */
-      }
-
-      
-
-    }
+@media (max-width: 500px) {
+  .logo img {
+    height: 40px;
+    /* You can adjust this size */
+  }
 
 
-    @media (min-width: 501px) {
-      .about-container{
-        width: 80%;
-        margin: 0 auto; /* ✅ This centers the container horizontally */
-        
-      }
-      .octagon-wrapper{
-        margin-right: 4vw;
-      }
-      .about-me-h2{
-        width: 50%;
-      }
-      .about-me-p{
-        padding-left: 35%;
 
-      }
+}
 
-      .contact-container{
-        width: 80%;
-        margin: 0 auto; /* ✅ This centers the container horizontally */
-        
-      }
-      .octagon-wrapper{
-        margin-right: 4vw;
-      }
-      .contact-h2{
-        width: 50%;
-      }
-      
-    }
+
+@media (min-width: 501px) {
+  .about-container {
+    width: 80%;
+    margin: 0 auto;
+    /* ✅ This centers the container horizontally */
+
+  }
+
+  .octagon-wrapper {
+    margin-right: 4vw;
+  }
+
+  .about-me-h2 {
+    width: 50%;
+  }
+
+  .about-me-p {
+    padding-left: 35%;
+
+  }
+
+  .contact-container {
+    width: 80%;
+    margin: 0 auto;
+    /* ✅ This centers the container horizontally */
+
+  }
+
+  .octagon-wrapper {
+    margin-right: 4vw;
+  }
+
+  .contact-h2 {
+    width: 50%;
+  }
+
+}
 
 
 
 /* ========== 3D Rotating Image Slider ========== */
 
-#slider-h1{
+#slider-h1 {
   font-size: 2.5rem;
   font-weight: 600;
   margin: 5vw;
   margin-bottom: 0vw;
-  display: inline-block;          /* Makes the border only as wide as the text */
+  display: inline-block;
+  /* Makes the border only as wide as the text */
 }
-.slider-note{
+
+.slider-note {
   margin-right: 5vw;
   margin-left: 5vw;
   text-align: center;
   font-weight: 400;
   font-size: small;
 }
+
 .rotating-slider-stage {
   width: 100%;
   height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
- /* background: rgba(0, 0, 0, 0.1);  optional: you can change or remove */
+  /* background: rgba(0, 0, 0, 0.1);  optional: you can change or remove */
   overflow: hidden;
 }
 
@@ -765,7 +824,8 @@
     width: 250px;
     height: 330px;
   }
-  .Sys{
+
+  .Sys {
     max-width: 90%;
   }
 }
@@ -805,14 +865,16 @@
   cursor: pointer;
   z-index: 10000;
 }
+
 .prev-zoom-btn,
 .next-zoom-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: clamp(1.5rem, 3vw, 2rem);;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  ;
   color: white;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
   border: none;
   cursor: pointer;
   padding: 10px 20px;
@@ -820,19 +882,24 @@
   z-index: 10000;
 }
 
-.prev-zoom-btn { left: 40px; }
-.next-zoom-btn { right: 40px; }
+.prev-zoom-btn {
+  left: 40px;
+}
+
+.next-zoom-btn {
+  right: 40px;
+}
 
 .prev-zoom-btn:hover,
 .next-zoom-btn:hover {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 
 /* EMAIL KA CHAKKAR STARTS HERE */
 /* Contact Form Styles */
 
-.quote-top-down{
+.quote-top-down {
   margin-top: 80px;
 }
 
@@ -857,12 +924,17 @@
   line-height: 1.2;
 }
 
-.quote-hr{
-  width: 75%;               /* Set the length */
-  height: 2px;              /* Set the thickness */
-  background-color: #2e2e2e; /* Your desired color */
-  border: none;             /* Remove default border */
-  margin: 2px auto;        /* Center it and add spacing */
+.quote-hr {
+  width: 75%;
+  /* Set the length */
+  height: 2px;
+  /* Set the thickness */
+  background-color: #2e2e2e;
+  /* Your desired color */
+  border: none;
+  /* Remove default border */
+  margin: 2px auto;
+  /* Center it and add spacing */
   margin-bottom: 7%;
 }
 
@@ -893,7 +965,8 @@
   color: white;
   padding: 10px 22px;
   border-radius: 50px;
-  font-size: clamp(0.8rem, 1vw, 1.5rem);;
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
+  ;
   font-weight: 500;
 }
 
@@ -907,10 +980,11 @@
   display: none;
   position: fixed;
   z-index: 999;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .popup-content {
@@ -963,18 +1037,20 @@
 
 @media (min-width: 900px) {
   .contact-form-wrapper {
-  padding: 1vw 4vw 4vw 4vw;
-  
-}
-.quote-heading {
-  font-size: clamp(1.5rem, 3vw, 3rem);
-  line-height: 1.1;
-}
+    padding: 1vw 4vw 4vw 4vw;
+
+  }
+
+  .quote-heading {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    line-height: 1.1;
+  }
 }
 
 /* Footer starts here  */
 .custom-footer {
-  background-color: #4b2b14; /* Brown background */
+  background-color: #4b2b14;
+  /* Brown background */
   color: white;
   padding-top: 1vw;
   text-align: left;
@@ -982,9 +1058,12 @@
 }
 
 .footer-left {
-  position: absolute; /* now sits on top of the image */
-  top: 0px; /* adjust for vertical placement */
-  left: 4vw; /* matches your original left margin */
+  position: absolute;
+  /* now sits on top of the image */
+  top: 0px;
+  /* adjust for vertical placement */
+  left: 4vw;
+  /* matches your original left margin */
   z-index: 2;
 }
 
@@ -1014,14 +1093,18 @@
 
 .footer-books {
   margin-top: 20px;
-  position: relative; /* ensures absolute elements are positioned relative to this */
+  position: relative;
+  /* ensures absolute elements are positioned relative to this */
 }
 
 .footer-books img {
   display: block;
-  max-width: 100%;   /* Normal size on big screens */
-  width: 100%;        /* Shrinks proportionally */
-  height: auto;       /* Keep aspect ratio */
+  max-width: 100%;
+  /* Normal size on big screens */
+  width: 100%;
+  /* Shrinks proportionally */
+  height: auto;
+  /* Keep aspect ratio */
   object-fit: contain;
 }
 
@@ -1051,7 +1134,7 @@
 
 .footer-center a {
   margin: 0 15px;
-  
+
 }
 
 /* .footer-center p {
@@ -1065,7 +1148,7 @@
   text-align: center;
   font-size: clamp(8px, 1vw, 16px);
   padding-bottom: 0.3vw;
-  
+
 }
 
 .footer-dev-info a {
@@ -1080,50 +1163,60 @@
 
 /* Medium screens (tablets, < 900px) */
 @media (max-width: 900px) {
-  .footer-books img  {
-    max-width: 900px;  /* shrink */
+  .footer-books img {
+    max-width: 900px;
+    /* shrink */
   }
+
   .footer-left h2 {
-  font-size: clamp(0.8rem, 5vw, 2.6rem);
-  line-height: 1.2; /* tighter, you can adjust to 1.1 or 1.3 as needed */
+    font-size: clamp(0.8rem, 5vw, 2.6rem);
+    line-height: 1.2;
+    /* tighter, you can adjust to 1.1 or 1.3 as needed */
   }
 }
 
 /* Small screens (mobiles, < 500px) */
 @media (max-width: 500px) {
+
   .footer-center a[href="index.html#services"],
   .footer-center a[href="about.html"] {
     display: none;
   }
+
   .footer-bottom {
-  padding: 0px 0px;
+    padding: 0px 0px;
   }
+
   .footer-left h2 {
-  font-size: clamp(1.2rem, 5vw, 2.6rem);
-  font-weight: 700;
-  letter-spacing: 0.04cap;
-  line-height: 1.4; /* tighter, you can adjust to 1.1 or 1.3 as needed */
+    font-size: clamp(1.2rem, 5vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: 0.04cap;
+    line-height: 1.4;
+    /* tighter, you can adjust to 1.1 or 1.3 as needed */
   }
+
   .quote-btn {
 
-  padding: 0.6vw 3vw;
-  border: 2px solid white;
+    padding: 0.6vw 3vw;
+    border: 2px solid white;
   }
+
   .hero-quote-btn {
-  margin: 10px 0vw;
-  display: block;
-  padding: 7px 21px;
-  border: 0px solid white;
-  border-radius: 50px;
-  color: white;
-  background-color: #402408;
-  font-size: 1.3rem;
-  font-weight: 600;
-  text-shadow: none;
-  width: 100%;
-  text-decoration: none;
+    margin: 10px 0vw;
+    display: block;
+    padding: 7px 21px;
+    border: 0px solid white;
+    border-radius: 50px;
+    color: white;
+    background-color: #402408;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-shadow: none;
+    width: 100%;
+    text-decoration: none;
+  }
 }
-}
+
 /* Footer Ends Here */
 
 /* SERVICES PAGE CSS STARTS HERE */
@@ -1133,11 +1226,13 @@
   justify-content: center;
   gap: 2rem;
   padding: 7% 15% 0% 15%;
-  flex-wrap: nowrap; /* ✅ stops early wrapping */
+  flex-wrap: nowrap;
+  /* ✅ stops early wrapping */
 }
 
 .services-image {
-  flex: 0 0 50%; /* ✅ fixed 50% width */
+  flex: 0 0 50%;
+  /* ✅ fixed 50% width */
 }
 
 .services-image img {
@@ -1149,7 +1244,8 @@
 }
 
 .services-content {
-  flex: 0 0 50%; /* ✅ fixed 50% width */
+  flex: 0 0 50%;
+  /* ✅ fixed 50% width */
   max-width: 600px;
 }
 
@@ -1174,7 +1270,7 @@
   word-spacing: 1px;
 }
 
-.about-get-in-touch-button{
+.about-get-in-touch-button {
   margin-top: 2vw;
   display: inline-block;
   padding: 6px 16px;
@@ -1194,14 +1290,18 @@
     flex-wrap: wrap;
     text-align: center;
   }
-  .services-image, .services-content {
+
+  .services-image,
+  .services-content {
     flex: 0 0 100%;
     max-width: 100%;
   }
+
   .services-section {
-  
-  padding: 85px 10% 0% 10%;
+
+    padding: 85px 10% 0% 10%;
   }
+
   .section-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -1209,47 +1309,55 @@
 }
 
 .customers-section {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .customers-section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .customers-section p {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 40px;
-    }
-
-    .customers-logos {
-      margin-top: 2%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 80px;
-      
-    }
-
-     .customers-logos img {
-      height: 120px;          /* Fixed height */
-      width: auto;           /* Keep aspect ratio */
-      object-fit: contain;   /* Prevent distortion */
-      transition: transform 0.3s ease;
-    }
-@media (max-width: 700px){
-  .customers-section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
+  text-align: center;
+  padding: 50px 20px;
 }
+
+.customers-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.customers-section p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.customers-logos {
+  margin-top: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+
+}
+
+.customers-logos img {
+  height: 120px;
+  /* Fixed height */
+  width: auto;
+  /* Keep aspect ratio */
+  object-fit: contain;
+  /* Prevent distortion */
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 700px) {
+  .customers-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+}
+
 @media (max-width: 485px) {
   .customers-logos {
     margin-top: 6%;
-    flex-direction: column;   /* Stack logos vertically */
-    align-items: center;      /* Center them */
-    gap: 30px;                /* Reduce space between */
-  }  
+    flex-direction: column;
+    /* Stack logos vertically */
+    align-items: center;
+    /* Center them */
+    gap: 30px;
+    /* Reduce space between */
+  }
 }
