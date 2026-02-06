@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
       displayNumber.textContent = value;
 
       // --- SHRINK font for long emails ---
-      displayNumber.style.fontSize = type === 'email' ? '1.5rem' : '2rem';
+      displayNumber.style.fontSize = type === 'email' ? '1rem' : '1.5rem';
 
       if (type === 'phone') {
         callBtn.href = `tel:${value}`;
