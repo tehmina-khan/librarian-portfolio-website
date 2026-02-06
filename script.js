@@ -49,9 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
     "images/image16.png",
     "images/approved4.jpg",
     "images/approved5.jpg",
-    "images/new1.png",
-    "images/new2.png",
-    "images/new3.png"
+    "images/New1.png",
+    "images/New2.png",
+    "images/New3.png"
   ];
 
   let currentIndex = 0;
