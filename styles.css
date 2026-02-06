@@ -213,7 +213,7 @@ nav {
   border-radius: 50px;
   color: white;
   text-decoration: none;
-  background-color: #402408bf;
+  background-color: #402408;
   font-size: clamp(1.3rem, 2.6vw, 1.3rem);
   font-weight: 600;
   text-shadow: none;
@@ -1084,7 +1084,7 @@ nav {
   font-size: clamp(.7rem, 2vw, 1rem);
   font-weight: 600;
   letter-spacing: 0.04cap;
-  background-color: #4b2b14;
+  background-color: #402408d0;
 }
 
 .quote-btn:hover {
