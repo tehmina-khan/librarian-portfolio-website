@@ -209,9 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-
 //Experimenatl button ends here
-
 
 console.log("JS file is connected till end!");
 

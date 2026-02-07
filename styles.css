@@ -701,7 +701,7 @@ nav {
 .card p {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #333;
+  color: #ff0000;
   word-spacing: 1px;
 }
 
@@ -775,8 +775,9 @@ nav {
   margin-right: 5vw;
   margin-left: 5vw;
   text-align: center;
-  font-weight: 400;
-  font-size: small;
+  font-size: 1.1rem;
+  color: #333;
+  word-spacing: 1px;
 }
 
 .rotating-slider-stage {

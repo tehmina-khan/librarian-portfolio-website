@@ -101,6 +101,7 @@
     </div>
   </section>
 <br><br><br>
+
 <!-- CONTACT PAGE STARTS HERE  -->
 <footer class="custom-footer">
   <div class="footer-books">
@@ -114,9 +115,47 @@
 
     <div class="footer-left">
       <h2>LET'S CREATE GREAT LIBRARIES, <br>TOGETHER</h2>
-      <a href="tel:+923323452771" class="quote-btn">+92 332 3452771</a>
-      <a href="quote.html" class="quote-btn">Get a quote</a>
+      <!-- Phone button -->
+        <a href="tel:#" class="quote-btn js-call-trigger" data-type="phone" data-value="+923323452771">+92
+          332 3452771</a>
+
+        <!-- Email button -->
+        <a href="#" class="quote-btn js-call-trigger" data-type="email" data-value="muneerahzia77@gmail.com">Drop an
+          email</a>
+
+        <!-- Get a Quote button -->
+        <a href="quote.html" class="quote-btn">Get a quote</a>
     </div>
+    <!-- Pop up section HTML starts here -->
+  <div class="mirror-overlay" id="callOverlay">
+    <div class="call-popup">
+
+      <!-- Close -->
+      <button class="close-btn" id="closeOverlayBtn" aria-label="Close popup">
+        ✕
+      </button>
+
+      <div class="popup-title">Contact Me</div>
+
+      <div class="phone-number" id="displayNumber">
+        +92 332 3452771
+      </div>
+      <div class="button-container">
+        <div class="action-buttons">
+          <a href="tel:+92 332 3452771" class="action-btn call-btn">
+            Call
+          </a>
+
+          <button class="action-btn copy-btn" id="copyBtn">
+            Copy
+            <span class="copy-feedback" id="feedbackMsg">Copied!</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop up section HTML ends here -->
   </div>
 
   <div class="footer-bottom">
