@@ -40,5 +40,6 @@ Completed and deployed.
 
 ### 👨‍💻 Developed by
 
-Tehmina Khan 
+Tehmina Khan
+
 Full Stack Developer
